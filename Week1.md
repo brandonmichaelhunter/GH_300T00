@@ -5,4 +5,43 @@ Goal: Core features, plans, triggers
   - 2.	Hands-on: Setup/test in VS Code + basic chat/inline
 -	**Sat** (four 30-min): Git basics review → Watch short overview → Generate 5–10 snippets → Quick self-quiz (ask Copilot 10 questions)
 -	Part 1 - https://learn.microsoft.com/en-us/training/paths/copilot/
+  - Responsible AI with GitHub Copilot
+    - Understand and apply the principles of Responsible AI usage.
+      - Responsible AI is an approach to developing, assessing, and deploying artificial intelligent systems in a safe, trustworthy, and ethical way
+      - Six Key Principles of Respnsible AI
+        - Fairness: AI systems should treat all people fairly.
+          - AI should provide consistent recommendations to individuals with similar symptoms, financial situations, or qualifications.
+          - Deploys techniques and detect bias and mitigate unfair impacts such as:
+            - Reviewing training data.
+            - Testing models with balance demographic samples
+            - Using adversarial debaising
+            - Montiering model performance accross user segements.
+            - Implemeting controls to override unfair model scores.  
+        - Reliability and safety: AI systems should perform reliably and safely.
+          - To build trust, AI systems must operate reliably, safely, and consistently.
+          -  Safety in AI refers to minimizing unintended harm, including physical, emotional, and financial harm to individuals and societies
+          -  Reliability means that AI systems perform consistently as intended without unwanted variability or errors. 
+        - Privacy and security: AI systems should be secure and respect privacy.
+          - Key points include:
+            - Getting user's permission before collecting their data.
+            - Collecting data that is only needed for the AI to work.
+            - Anonymizing personal data, like Pseudonymization replaces personal details with random identites or while aggregation groups data into summaries removing specofic individual details.
+          - Encrypt sensitive data both during transfer and when stored.  
+        - Inclusiveness: AI systems should empower everyone and engage people.
+          - Inclusiveness means ensuring that AI systems are fair, accessible, and empower everyone. Microsoft's Responsible AI standard recognizes that AI creators (including GitHub) must proactively design AI to include all people, communities, and geographies - especially those areas of society historically underrepresented.
+             
+        - Transparency: AI systems should be understandable.
+          - AI creators should:
+            - Explain how their systems operate clearly through a clear validation framework.
+            - Justify the design choices behind AI systems
+            - Be honest about the capabilities and limitiations of AI systems.
+            - Enable auditability with logging, reporting and auditn capablities.   
+        - Accountability: People should be accountable for AI systems.
+          - The Accountability principle states that AI creators should be responsible for how their systems operate.
+          - They need to continuously monitor system performance and mitigate risks. 
+    - Identify limitations and mitigate risks associated with AI.
+      - it is essential to implement robust governance frameworks, ensure transparency in AI processes, and incorporate human oversight
+      - 
+    - Learn best practices for ensuring AI-generated code aligns with ethical standards and project-specific requirements.
+    - Recognize the importance of transparency and accountability in AI systems in building trust and maintain user confidence. 	
 -	Part 2- https://learn.microsoft.com/en-us/training/paths/gh-copilot-2/
