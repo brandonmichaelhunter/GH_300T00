@@ -29,7 +29,6 @@ Goal: Core features, plans, triggers
           - Encrypt sensitive data both during transfer and when stored.  
         - Inclusiveness: AI systems should empower everyone and engage people.
           - Inclusiveness means ensuring that AI systems are fair, accessible, and empower everyone. Microsoft's Responsible AI standard recognizes that AI creators (including GitHub) must proactively design AI to include all people, communities, and geographies - especially those areas of society historically underrepresented.
-             
         - Transparency: AI systems should be understandable.
           - AI creators should:
             - Explain how their systems operate clearly through a clear validation framework.
@@ -41,7 +40,6 @@ Goal: Core features, plans, triggers
           - They need to continuously monitor system performance and mitigate risks. 
     - Identify limitations and mitigate risks associated with AI.
       - it is essential to implement robust governance frameworks, ensure transparency in AI processes, and incorporate human oversight
-      - 
     - Learn best practices for ensuring AI-generated code aligns with ethical standards and project-specific requirements.
     - Recognize the importance of transparency and accountability in AI systems in building trust and maintain user confidence. 	
 -	Part 2- https://learn.microsoft.com/en-us/training/paths/gh-copilot-2/
