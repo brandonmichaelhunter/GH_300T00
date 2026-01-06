@@ -5,7 +5,8 @@ Goal: Core features, plans, triggers
   - 2.	Hands-on: Setup/test in VS Code + basic chat/inline
 -	**Sat** (four 30-min): Git basics review → Watch short overview → Generate 5–10 snippets → Quick self-quiz (ask Copilot 10 questions)
 -	Part 1 - https://learn.microsoft.com/en-us/training/paths/copilot/
-  - Responsible AI with GitHub Copilot
+  ----
+  - **Responsible AI with GitHub Copilot**
     - Understand and apply the principles of Responsible AI usage.
       - Responsible AI is an approach to developing, assessing, and deploying artificial intelligent systems in a safe, trustworthy, and ethical way
       - Six Key Principles of Respnsible AI
@@ -34,12 +35,42 @@ Goal: Core features, plans, triggers
             - Explain how their systems operate clearly through a clear validation framework.
             - Justify the design choices behind AI systems
             - Be honest about the capabilities and limitiations of AI systems.
-            - Enable auditability with logging, reporting and auditn capablities.   
+            - Enable auditability with logging, reporting and auditing capablities.   
         - Accountability: People should be accountable for AI systems.
           - The Accountability principle states that AI creators should be responsible for how their systems operate.
           - They need to continuously monitor system performance and mitigate risks. 
     - Identify limitations and mitigate risks associated with AI.
       - it is essential to implement robust governance frameworks, ensure transparency in AI processes, and incorporate human oversight
     - Learn best practices for ensuring AI-generated code aligns with ethical standards and project-specific requirements.
-    - Recognize the importance of transparency and accountability in AI systems in building trust and maintain user confidence. 	
+    - Recognize the importance of transparency and accountability in AI systems in building trust and maintain user confidence.
+  ----
+  - **Itroduction to GitHub Copilot**
+    - *Understand how GitHub Copilot can help you code by offering autocomplete-style suggestions.*
+      - GitHub Copilot is powered by the OpenAI Codex system.
+      - GitHub Copilot is available as an extension for VS Code, Visual Studio, Vim/Neovim, and the JetBrains suite of IDEs.
+      - Features
+        - Copilot for chat
+          - GitHub Copilot brings a ChatGPT-like chat interface to the editor.
+          - A developer can get in-depth analysis and explanations of what code blocks are intended to do, generate unit tests, and even get proposed fixes to bugs.
+        - Copilot for pull requests
+          - OpenAI's GPT-4 model adds support in GitHub Copilot for AI-powered tags in pull-request descriptions through a GitHub app that organization admins and individual repository owners can install.
+          - GitHub Copilot automatically fills out these tags based on the changed code. Developers can then review or modify the suggested descriptions. 
+        - Copilot for the CLI
+          -  The GitHub Copilot command-line interface (CLI) can compose commands and loops, and it can throw obscure find flags to satisfy your query. 
+    - *Understand the various ways to trigger GitHub Copilot.*
+    - *Comprehend the differences among GitHub Copilot Free, Pro, Business, and Enterprise.*
+      - Subscription Plans
+        - Free
+          - The GitHub Copilot Free tier includes 2000 code completions per month,
+          - 50 chat requests per month, and
+          - access to both GPT-4o and Claude 3.5 Sonnet models.
+          - Code completions in supported editors
+          - Limited monthly completions and chat requests
+          - Access to advanced AI models
+        - Pro - Pick up from here: https://learn.microsoft.com/en-us/training/modules/introduction-to-github-copilot/2-github-copilot-your-ai-pair-programmer
+        - Pro +
+        - Business
+        - Enterprise
+    - *Know how to configure GitHub Copilot.*
+    - *Know how to troubleshoot GitHub Copilot.*
 -	Part 2- https://learn.microsoft.com/en-us/training/paths/gh-copilot-2/
