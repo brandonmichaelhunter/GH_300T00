@@ -58,6 +58,20 @@ Goal: Core features, plans, triggers
         - Copilot for the CLI
           -  The GitHub Copilot command-line interface (CLI) can compose commands and loops, and it can throw obscure find flags to satisfy your query. 
     - *Understand the various ways to trigger GitHub Copilot.*
+      - Inline Suggestions - as a user type into an editor Copilot can offer code suggestions within the screen and you can accept them by hitting the Tab key.
+      - Command palette
+      - Copilot Chat
+      - Inline Chat - Inline chat enables context-specific conversations with Copilot directly within your code editor.
+        - comman commands:
+          - /explain - Provides an explanation of the selected code.
+          - /suggest - Offers code suggestions based on the current context.
+          - /tests - Generates unit tests for the selected function or class.
+          - /comment - Converts comments into code snippets.
+      - Comments in code
+      - Multiple Suggestions - Multiple suggestions help you explore different coding approaches and select the most appropriate one.
+      - Explanations - highlight code and copilot can explain the code to you
+      - Automated test generation
+      - 
     - *Comprehend the differences among GitHub Copilot Free, Pro, Business, and Enterprise.*
       - Subscription Plans
         - Free
@@ -67,10 +81,56 @@ Goal: Core features, plans, triggers
           - Code completions in supported editors
           - Limited monthly completions and chat requests
           - Access to advanced AI models
-        - Pro - Pick up from here: https://learn.microsoft.com/en-us/training/modules/introduction-to-github-copilot/2-github-copilot-your-ai-pair-programmer
+        - Pro
+          - GitHub Copilot Pro is designed for individual developers who want enhanced capabilities beyond the Free plan.
+          - Key Features:
+            - Unlimited code completions and chat requests
+            - Priority access to the latest AI models
+            - Advanced code suggestions and explanations
+            - Integration with supported IDEs (VS Code, Visual Studio, JetBrains, Neovim)
+            - Automated test generation and code explanation features 
         - Pro +
+          - includes all the features of Copilot Pro with additional access to premium model usage and priority performance on high-demand resources. It's suited for individuals with higher usage needs.
+          - Key features:
+            - All Pro features
+            - Additional premium request capacity
+            - Priority infrastructure access
         - Business
+          - GitHub Copilot Business is for organizations that want to manage Copilot access and benefit from additional security and compliance features.
+          - Key features:
+            - All Pro and Pro+ features for organization members
+            - Centralized management and policy controls
+            - Security vulnerability filtering
+            - Code referencing and public code filtering
+            - IP indemnity and enterprise-grade security, safety, and privacy
+            - Chat in IDE and mobile
+            - Filter for public code
         - Enterprise
+          - GitHub Copilot Enterprise is designed for large organizations and enterprises that require advanced capabilities, deeper integration, and enhanced personalization.
+          - Key features:
+            - All Business features
+            - Personalized code suggestions based on internal/private code
+            - Integration with GitHub Enterprise Cloud
+            - AI-powered search and documentation generation across your codebase
+            - Enhanced pull request support with AI-powered tags and summaries
+            - Organization-wide customization and fine-tuning of Copilot models
+            - Deep integration with GitHub for chat and codebase exploration.
+          - GitHub Copilot Enterprise can index an organization's codebase for a deeper understanding and for suggestions that are more tailored.
+          - It offers access to GitHub Copilot customization to fine-tune private models for code completion.
+
+
     - *Know how to configure GitHub Copilot.*
+      - Before you can start using GitHub Copilot, you need to set up a free trial or subscription for your account.
+      - To get started, select your GitHub profile photo, and then select Settings. Copilot is on the left menu under Code, planning, and automation.
+      - After you sign up, you need to install an extension for your preferred environment.
+      - GitHub Copilot supports GitHub.com (which doesn't need an extension), VS Code, Visual Studio, JetBrains IDEs, and Neovim as an unobtrusive extension.
+      - Add the VS Code extension for GitHub Copilot
+      - On the bottom pane of the VS Code window, select the status icon, and then select Enable or Disable. 
+
     - *Know how to troubleshoot GitHub Copilot.*
+      - VS Code, the log files are useful for diagnosing connection problems.
+      - The GitHub Copilot extension stores the log files in the standard log location for VS Code extensions.
+      - You can find the log files by opening the command palette and then entering either Developer: Open Log File or Developer: Open Extensions Logs Folder.
+      - Network restrictions, firewalls, or your proxy might cause problems when you're connecting to GitHub Copilot.
+      - 
 -	Part 2- https://learn.microsoft.com/en-us/training/paths/gh-copilot-2/
