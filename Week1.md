@@ -132,5 +132,130 @@ Goal: Core features, plans, triggers
       - The GitHub Copilot extension stores the log files in the standard log location for VS Code extensions.
       - You can find the log files by opening the command palette and then entering either Developer: Open Log File or Developer: Open Extensions Logs Folder.
       - Network restrictions, firewalls, or your proxy might cause problems when you're connecting to GitHub Copilot.
-      - 
+     
+----
+**Introduction to prompt engineering with GitHub Copilot**
+- *Prompt engineering principles, best practices, and how GitHub Copilot learns from your prompts to provide context-aware responses that accelerate development cycles.*
+  - Prompt engineering is the process of crafting clear instructions to guide AI systems, like GitHub Copilot, to generate context-appropriate code tailored to your project's specific needs.
+  - 4s
+    - Single - focus prompts on a single, well defined task or question.
+    - Short - Keep prompots concise and to the point.
+    - Specific - ensure instructions are explicit and detaild
+    - Surround - Use descriptive filenames and keep related files open.
+  - Provide enough clarity. Example: "Write a Python function to filter and return even numbers from a given list" is both short and specific.
+  - Provide enough context with details. The more contextual information you provide, the more fitting the generated code suggestions are. For example, adding some comments at the top of your code. - Surround principle
+  - Provide examples for learning
+    - Well-crafted examples help Copilot understand patterns quickly, leading to more accurate initial suggestions that require fewer revision cycles- Advanced prompting strategies including role prompting and chat history management to get better results with fewer iterations.
+    - Assert and iterate
+      - Well-crafted examples help Copilot understand patterns quickly, leading to more accurate initial suggestions that require fewer revision cycles
+  - To enhance its understanding of specific code contexts, engineers often provide it with examples.
+    - **Zero-shot learning**
+      - This approach is ideal for rapidly implementing common patterns and standard functionality.
+      - Copilot generates code without any specific examples, it relying solely on its foundational training.
+    - **One-shot learning**
+      - A single example is given.
+      - Aiding the model in generating more context-aware responses that follow your specific patterns and conventions.
+      - Effective for creating consistent implementations across your codebase, accelerating feature development while maintaing coding standards.
+    - **Few-shot learning**
+      - Copilot is presented with serverla examples.
+      - This approach excels at generating sophisticated implementations that handle multiple scenarios and edge cases.
+      - Reduces time spent on manual testing and code refinement.
+    - Chain prompting and managing chat history
+      - Working on complex features with extend conversations and long converstaion histories can ben inefficent and costly in terms of processing.
+      - Long prompts with full converstaion history can consume 2-3 PRUs per turn.
+      - To manage this efficently
+        - *Summarize context* - when conversation becomes to lengtly.
+        - *Reset and provide focused context* - for new features. Start fresh with specific details instead of carrying forward the entire conversation.
+        - *Use concise references* - to previous work instead of repeating full implementations.
+    - Role prompting for specialized tasks
+      - This involves instructuring copilot to act as a specifc type of expert.
+      - This can improve the quality and relevance of generated code for specialized domains.
+      - Helps accelerate development by getting more targeted solutions on the first try.
+      - Helps reduce the need for multiple revision cycles.
+      - *Security export role*
+        - Example: "Act as a cybersecurity expert. Create a password validation function that checks for common vulnerabilities and follows OWASP guidelines."
+          - The approach typically generates code that includes:
+            - Input sanitization
+            - Protection against comment attacks
+            - Industry standard validation patterns.
+            - Security best practices.
+      - *Performance optimization role*
+        - "Act as a performance optimization expert. Refactor this sorting algorithm to handle large datasets efficiently."
+        - This results often in:
+          - Optimized algorithms and data structures
+          - Memory-efficent implementations
+          - Scalability considerations
+          - Performance monitoring suggestions
+      - *Testing specialist role*
+        - "Act as a testing specialist. Create comprehensive unit tests for this payment processing module, including edge cases and error scenarios."
+        - This typically produces
+          - Thorough test converage
+          - Edge case handling
+          - Mock implementations
+          - Error condition testing
+    
+- *The underlying flow of how GitHub Copilot processes user prompts to generate responses or code suggestions efficiently.*
+  - **Inbound Flow:**   
+    1. Secure prompt transmission and context gathering
+       - The process begins with the secure transmission of the user prompt over HTTPS.
+       - This ensures that your natural language comment is sent to GitHub Copilot's servers securely and confidentially, protecting sensitive information.
+       - Simultaneously, Copilot collects context details:
+         - Code before and after the cursor position, which helps it understand the immediate context of the prompt.
+         - Filename and type of the file being edited, allowing it to tailor code suggestions to the specific file type.
+         - Information about adjacent open tabs, ensuring that the generated code aligns with other code segments in the same project.
+         - Information on project structure and file paths
+         - Information on programming languages and frameworks
+         - Pre-processing using Fill-in-the-Middle (FIM) technique to consider both the preceding and following code context, effectively expanding the model's understanding allowing Copilot to generate more accurate and relevant code suggestions by leveraging a broader context.
+ 
+    2. Proxy filter
+       - Once the context is gathered and the prompt is built, it passes securely to a proxy server hosted in a GitHub owned Azure tenant.
+       - The proxy filters traffic. Blocks attempts to hack the prompt or manipulate the system into revealing details about how the model generates code suggestions.      
+    3. Toxicity filtering
+       - Content filtering
+       - Excludes
+         - Hate speech and inappropriate content
+         - Personal data.       
+    4. Code Generation with LLM
+       - The filtered and analyzed prompt is passed to LLM models, which generates the appropriate code suggestions.       
+  - **Outbound flow:**
+    5. Post-processing and response validation
+       - Once the model produces its responses, removes harmful or offensive generated content, the proxy server then applies the final layer of checks to ensure code quality, security and ethical standards.
+         - Code quality: responses are checked for common bugs or vulnerablitys, such s XSS, SQL injection.
+         - Matching public code (optional)
+    6. Suggestion delivery and feedback loop initiation
+       - Only responses that pass all filters are deliverted to the user.
+       - Copilot then initiates a feedback loop based on your actions to achieve the following:
+         - Grow its knoledge from accepted suggestions
+         - Learn and import through modifications and rejections of its suggestions.
+    7. Repeat for subsequent prompts
+       - The process is repeated as you provide more prompts, with Copilot continuously handling user requests, understanding their intent, and generating code in response. 
+- *The data flow for code suggestions and chat in GitHub Copilot.*
+  - Copilot maintains propmots for about 28 days.
+  - Limited context windows
+    - GitHub Copilot's context window typically ranges from approximately 200-500 lines of code or up to a few thousand tokens
+    - Copilot Chat currently operates with a context window of 4k tokens, providing a broader scope for understanding and responding to user queries compared to the standard Copilot.
+- *LLMs (Large Language Models) and their role in GitHub Copilot and prompting.*
+  - Large Language Models (LLMs) are artificial intelligence models designed and trained to understand, generate, and manipulate human language.
+  - Core aspects to understand about LLM
+    - Volume of training data - LLMs are exposed to vast amounts of text from diverse sources. This exposure equips them with a broad understanding of language, context, and intricacies involved in various forms of communication.
+    - Contextual understanding - heir ability to understand context allows them to provide meaningful contributions, be it completing sentences, paragraphs, or even generating whole documents that are contextually apt.
+    - Machine learning and AI integration - They're neural networks with millions, or even billions, of parameters that are fine-tuned during the training process to understand and predict text effectively.
+    - Versatility - They can be tailored and fine-tuned to perform specialized tasks, making them highly versatile and applicable across various domains and languages.
+  - Role of LLMs in GitHub Copilot and prompting
+    - The LLM considers not just the current file but also other open files and tabs in the IDE to generate accurate and relevant code completions.
+  - Fine-tuning LLMs
+    - Fine-tuning is a critical process that allows us to tailor pretrained large language models (LLMs) for specific tasks or domains.
+    - It involves training the model on a smaller, task-specific dataset, known as the target dataset, while using the knowledge and parameters gained from a large pretrained dataset, referred to as the source model.
+    - Fine-tuning is essential to adapt LLMs for specific tasks, enhancing their performance.
+    - Traditional full fine-tuning means to train all parts of a neural network, which can be slow and heavily reliant on resources.
+  - LoRA fine-tuning
+    - LoRA (Low-Rank Adaptation) fine-tuning is a clever alternative. It's used to make large pretrained language models (LLMs) work better for specific tasks without redoing all the training.
+    - How it works
+      - LoRA adds smaller trainable parts to each layer of the pretrained model, instead of changing everything.
+      - The original model remains the same, which saves time and resources.
+- *How to craft effective prompts that optimize GitHub Copilot's performance, ensuring precision and relevance in every code suggestion while minimizing revision cycles.*
+- *The intricate relationship between prompts and Copilot's responses to streamline your development workflow.*
+- *How Copilot handles data from prompts in different situations, including secure transmission and content filtering.*
+
+----
 -	Part 2- https://learn.microsoft.com/en-us/training/paths/gh-copilot-2/
