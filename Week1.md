@@ -256,6 +256,47 @@ Goal: Core features, plans, triggers
 - *How to craft effective prompts that optimize GitHub Copilot's performance, ensuring precision and relevance in every code suggestion while minimizing revision cycles.*
 - *The intricate relationship between prompts and Copilot's responses to streamline your development workflow.*
 - *How Copilot handles data from prompts in different situations, including secure transmission and content filtering.*
-
+----
+**Introduction to Copilot Spaces**
+- *What GitHub Copilot Spaces are and how they differ from general Copilot Chat*
+  - It’s a dedicated Copilot chat grounded in a curated set of context you choose.
+  - The Space is itself like a LLM and you can feed it GitHub files, issues, pull requests, and your own free‑text instructions to provide context to your specific topic.
+  - Visibility and sharing
+    - Successful Spaces are easy to find, safe to share, and clearly "owned."
+    - When you create a Space, set visibility according to how broadly you intend others to use it.
+  - Security and access
+    - Security follows GitHub's existing permissions. \
+    - A Space doesn't grant new access; it only surfaces content that viewers are already entitled to see.
+    - If a Space links to private repositories, issues, or pull requests, only users with the appropriate repo permissions see that material reflected in answers.
+  - Versioning and freshness
+    - Spaces stay fresh by referencing live GitHub sources.
+    - Linked files reflect the repository's default branch, and attached issues and pull requests evolve as they change, reducing the need to copy content into separate documents.
+    - If you need branch‑specific guidance or a historical snapshot, consider narrowing your references to the relevant files, adding a brief example in free text, or—if supported in your environment—attaching a text file that captures the exact content you want the Space to use.
+    -  
+  - Governance
+    - Treat governance as lightweight but intentional.
+    - Assign an owner who maintains the Space, add a short "How to use this Space" note at the top of the instructions, and include 1–3 canonical examples that define "good" output.
+    - Establish naming conventions (for example, "ServiceName—Onboarding Helper") and review cadence (for example, at each release) to prune stale sources and keep instructions aligned with reality. When a Space grows beyond a single job, split it into smaller Spaces so discoverability stays high and answer quality remains consistent.   
+- *Why tightly scoped context improves answer quality and consistency*
+  - do keep your questions tightly scoped to the sources you attached—files, issues, pull requests, and notes—so answers stay grounded.
+  - Don't @‑mention people or other Copilot extensions in a Space
+  - Do use prompting patterns that lead to runnable, verifiable outputs. Start by confirming intent, then refine with concrete constraints.
+  - Don't expect the Space to pull in content that isn't included
+  - Do iterate when responses drift: tighten instructions, add one to three high‑quality examples that demonstrate "good" output, and prune noisy or irrelevant sources.
+  - Don't let the Space sprawl beyond a single job or exceed model context limits; if you hit size warnings or degraded answers, reduce sources or split into smaller Spaces to restore precision and predictability.
+  - Do keep context fresh and well‑ordered.
+  - Don't paste sensitive data into free-text notes.prefer linking to files in repos
+- *How to attach files, issues, and instructions to guide the model*
+- *When to create a Space for repeatable, domain-specific tasks*
+----
+**Use advanced GitHub Copilot features**
+----
+**GitHub Copilot Across Environments: IDE, Chat, GitHub.com, and Command Line  Techniques**
+----
+**Management and customization considerations with GitHub Copilot**
+----
+**Developer use cases for AI with GitHub Copilot**
+----
+**Develop unit tests using GitHub copilot tools**
 ----
 -	Part 2- https://learn.microsoft.com/en-us/training/paths/gh-copilot-2/
