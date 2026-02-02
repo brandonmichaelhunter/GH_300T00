@@ -291,6 +291,53 @@ Goal: Core features, plans, triggers
 ----
 **Use advanced GitHub Copilot features**
 ----
+-   **Apply slash commands to make code changes**
+	- Within the chat pane or when using the inline chat, you can use slash commands
+	- allow GitHub Copilot to use a specific intent for quickly solving common development tasks
+	-  type a forward slash in the chat pane or inline chat, you should see a drop-down menu with all the slash commands available
+	- /tests - helps you write tests
+	- /docs intended for writing documentation.
+	- Using specific slash commands to create a question is a good way to get better responses without having to write longer prompts.
+	- `/doc`: Adds comments to the specified or selected code.
+	-   `/explain`: Gets explanations about the code.
+	-   `/generate`: Generates code to answer the specified question.
+	-   `/help`: Gets help on how to use Copilot chat.
+	-   `/optimize`: Analyzes and improves the runtime of the selected code.
+	-   `/tests`: Creates unit tests for the selected code.
+	- @workspace I need to create a Dockerfile for this project, can you generate one that will help me package it? -*You'll get a response back that explains the steps to create a  _Dockerfile_  for your project, along with some explanation on what the steps of the file are going to do.*
+-   **Interact with GitHub Copilot using the Chat feature.**
+	- GitHub Copilot allows you to have an interactive discussion using the chat feature. 
+	- use the inline chat. 
+	- It allows you to interact with GitHub Copilot without leaving your code.
+	- Access the inline chat by using **Ctrl+i** on Windows or **Command+i** on a Mac. 
+	- Benefits of using the inline chat is that 
+		- You don't have to switch context by going to a different pane. 
+		- The suggestions and interactions happen closer to the code.
+-   **Ask questions about your project using an agent.**
+	- _agents_ that allows you to interact with GitHub Copilot.
+	- allow you to ask questions using a specific context
+	- @terminal helps you change with GitHub Copilot to interact with the terminal
+	- @workspace - which is aware of your entire workspace. It allows you to ask questions about the entire project.
+		- @workspace how can I package this project?
+		- other agents:
+			- `@terminal`: Provides suggestions based on the terminal output.
+				- Example:  @terminal  How do I fix the error message I'm seeing?
+			-   `@file`: Focuses on the content of a specific file.
+				- Example:  @file  Can you help me refactor this function in main.py?
+			-   `@directory`: Considers the contents of a specific directory.
+				- Example:  @directory  How can I optimize the scripts in the utils directory?
+
+- GitHub Codespaces 
+	- is a hosted developer environment operating in the cloud that can be run with Visual Studio Code. 
+	- You can customize the development experience for 				
+		- any development project on GitHub, 
+		- preinstalling dependencies, 
+		- libraries, 
+		- Visual Studio Code extensions and settings.
+- Ghost text
+	- When GitHub Copilot is enabled, it provides you with suggestions. These suggestions are called ghost text.
+> Written with [StackEdit](https://stackedit.io/).
+----
 **GitHub Copilot Across Environments: IDE, Chat, GitHub.com, and Command Line  Techniques**
 ----
 **Management and customization considerations with GitHub Copilot**
