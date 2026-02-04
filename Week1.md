@@ -418,8 +418,50 @@ Goal: Core features, plans, triggers
 			- **@vscode:** Use this agent to ask questions related to Visual Studio Code, such as how to debug or change settings within the IDE.
 ---
 -   *Understand how to use GitHub Copilot on GitHub.com for repository exploration, pull request assistance, issue management, and collaborative code review workflows.*
----
+	- You can access Copilot features in several areas:
+		-  **Repository pages**  - Get explanations of code, documentation, and project structure
+			- **Code explanation**: Ask Copilot to explain complex code sections, functions, or entire files
+					- How Copilot explains action errors
+						- **Error analysis**: Copilot examines log files and identifies the root cause of failures
+						-   **Solution suggestions**: Provides specific recommendations to resolve workflow issues
+						-   **Best practices**: Offers guidance on improving workflow reliability and performance
+						-   **Context awareness**: Understands the relationship between different workflow steps and dependencies
+			-   **Project overview**: Get AI-generated summaries of repository purpose, architecture, and key components
+			-   **Documentation generation**: Create or improve README files, API documentation, and code comments
+		-  **Issues and pull requests**  - Generate summaries, suggest solutions, and draft responses. These features help maintain development velocity by reducing the manual effort required to prepare and review pull requests, allowing teams to focus on code quality rather than administrative tasks.
+			- *PR summary generation and advanced pull request assistance features consume Premium Request Units (PRUs).*
+			- *Typically, generating a PR summary uses 1-2 PRUs depending on the complexity and size of the changes.*
+			- **PR summaries**: Generate comprehensive summaries of changes made in a pull request, helping reviewers quickly understand the scope and impact of modifications
+			-   **Review suggestions**: Get recommendations for code improvements and potential issues before formal review, reducing review cycles
+			-   **Merge conflict resolution**: Receive guidance on resolving conflicts between branches, streamlining the merge process
+			- **Documentation updates**: Automatically suggest updates to README files, changelogs, and other documentation based on code changes
+		-   **Discussions**  - Help formulate responses and provide technical insights
+		-   **Code review**  - Analyze changes and suggest improvements
+			- GitHub Copilot enhances your code review process by providing intelligent insights and suggestions that help maintain high code quality and catch potential issues early
+				- **Review comments**: Generate thoughtful code review comments with specific suggestions
+				-   **Security analysis**: Identify potential security vulnerabilities or best practice violations
+				-   **Performance optimization**: Suggest improvements for code efficiency and performance
+		- **Issue Management**
+			-  **Issue analysis**: Break down complex problems into actionable tasks
+			-   **Solution brainstorming**: Generate potential approaches to resolve reported issues
+			-   **Reproduction steps**: Help create clear steps to reproduce bugs or issues
+	---
 -   *Understand how to interact with GitHub Copilot in CLI to get command explanations, suggestions, and execute commands to automate terminal workflows.*
+	- **GitHub Copilot CLI** brings Copilot directly into the command line
+	- Copilot CLI uses GitHub authentication and runs independently from GitHub CLI, though it uses your existing credentials.
+	- Installing and launching Copilot CLI
+		- brew install copilot-cli
+		- curl -fsSL https://gh.io/copilot-install | bash
+		- copilot
+	- You can use the `@` to select a specific file you want to work with as context.
+	- Configuration Options:
+		- `/model`  choose AI model
+		-   `/theme`  change terminal theme
+		-   `/skills`  manage enhanced capabilities
+		-   `/reset-allowed-tools`  reset tools
+		-   `/list-dirs`  view allowed directories
+		-   `/mcp`  MCP server settings
+	- copilot configure
 ----
 **Management and customization considerations with GitHub Copilot**
 ----
