@@ -339,6 +339,87 @@ Goal: Core features, plans, triggers
 > Written with [StackEdit](https://stackedit.io/).
 ----
 **GitHub Copilot Across Environments: IDE, Chat, GitHub.com, and Command Line  Techniques**
+-   *Understand how to utilize GitHub Copilot's auto-suggestions, multiple suggestions pane, and its ability to adapt to different coding styles to accelerate code development.*
+	- Support Languages
+		- Python, JavaScript, Java, TypeScript, Ruby, Go, C#, C++
+	- Free tier offers 
+		- 2000 code autocompletes
+		- 50 chats per month
+	- Auto suggestions
+		- Work as you type, sometime completing the current line, sometimes suggesting a whole new block of code.
+	- Multiple suggestions plan
+		- appears as grayed out code snippet.
+		- hover over the suggestion to reveal the copilot control pane. Allows you to quickly evaluate multiple approaches to the same problem.
+		- keyboard shortcuts: 
+			- Option or Alt + ] or Option or Alt+[
+			- Windows or LInux: Alt + ] (next), Alt +[ (previous)
+	- GitHub Copilot demonstrates its ability to adapt through the following ways:
+		- **Method Implementation**: When you start typing a method name, Copilot can suggest the entire implementation, following your established coding style.
+		-   **Naming Conventions**: It picks up on your preferred naming conventions for variables, functions, and classes.
+		-   **Formatting**: Copilot adapts to your indentation style, bracket placement, and other formatting preferences.
+		-   **Comment Style**: It can mimic your comment style, whether you prefer inline comments, block comments, or doc strings.
+		-   **Design Patterns**: When your project consistently uses certain design patterns, Copilot suggests code that aligns with these patterns.
+
+---
+-   *Understand how to provide context to GitHub Copilot through inline comments, block comments, doc strings, and other types of comments to enhance code generation accuracy and speed.*
+ 	- By understanding the intent behind the comments, Copilot can provide more accurate and context-aware code suggestions through two key processes:
+		- **Natural Language Processing**: Copilot uses advanced natural language processing (NLP) techniques to interpret the meaning and intent behind comments in the code.
+		-  **Contextual Analysis**: It analyzes comments in relation to the surrounding code, understanding their relevance and purpose within the broader context of the file or project.
+	- Types of comments utilized
+		-   **Inline comments**: Short explanations next to specific lines of code.
+		-   **Block comments**: Longer explanations that might describe a function or class.
+		-   **Docstrings**: Formal documentation strings in languages like Python.
+		-   **TODO comments**: Notes about future implementations or improvements.
+		-   **API Documentation**: Comments that describe the usage and parameters of functions or methods.
+	- Comment-driven code generation
+		- **Function implementation**: When a function is described in comments, Copilot can suggest an entire implementation based on that description.
+		- **Code completion**: Copilot uses comments to provide more accurate code completions, understanding the developer's intent.
+		- **Variable naming**: Comments can influence Copilot's suggestions for variable names, making them more descriptive and context-appropriate.
+		- **Algorithm selection**: When comments describe a specific algorithm or approach, Copilot can suggest code that aligns with that method.
+---
+-   *Understand how to interact with GitHub Copilot through natural language conversations to generate complex code, debug issues, obtain code explanations, and streamline development workflows in real-time.*
+	- Complex code generation
+	- **Debugging assistance** If you encounter errors in your code, Copilot Chat can be valuable in analyzing error messages and suggesting potential fixes.
+		- One way to achieve this result is by using Copilot inline-chat by highlighting the piece of code containing the error, right clicking and selecting Copilot, then inline-chat.
+	- **Code explanations** Copilot Chat can also be used to better understand complex code snippets. It can break down code into simpler terms, explain the purpose and functionality of unfamiliar code, and offer insights into best practices and potential optimizations.
+---
+-   *Understand how to improve the relevance of GitHub Copilot Chat's suggestions by using scope referencing, slash commands, and agents to quickly complete routine development tasks.*
+	- Scope referencing - To enhance the accuracy and relevance of the responses provided by GitHub Copilot Chat, it’s important to properly scope your questions using references.
+		- How to:
+			- **File references:**  You can specify a particular file in your question by adding a  `#file:`  before the file name.
+			- **Environment References:** You can reference the entire solution or workspace by using `@workspace`
+	- Slash commands
+		- Slash commands in GitHub Copilot Chat allow you to quickly specify the intent of your query.
+			- Commands
+				- **/doc:** Adds comments to the specified or selected code.
+				- **/explain:** Provides explanations for selected code.
+				- **/fix:** Proposes fixes for problems in the selected code.
+				- **/generate:** Helps in generating new code based on your requirements.
+				- **/optimize:** Analyzes and suggests improvements to the running time or efficiency of the selected code.
+				- **/tests:** Automatically creates unit tests for the selected code.
+	- Model selection and premium features
+		- **Standard models (GPT-4o):**
+			-   Provide fast, reliable responses for most development tasks
+			-   Consume 1 PRU per request
+			-   Ideal for routine coding assistance, code explanations, and basic debugging
+			-   Examples: Simple function generation, syntax help, basic refactoring suggestions
+
+		- **Premium models (o1-preview, o1-mini):**
+			-   Offer enhanced reasoning capabilities for complex problems
+			-   Consume 2 PRUs per request (double the standard rate)
+			-   Better suited for sophisticated analysis, complex algorithms, and architectural decisions
+			-   Examples: Advanced debugging of multi-threaded code, complex algorithm design, security analysis
+		- consider your PRU usage when selecting models for different types of tasks.
+	- Copilot Agents
+		- GitHub Copilot agents are custom tools that you can build and integrate with GitHub Copilot Chat to provide additional functionalities tailored to your specific needs.
+			- **@workspace:** This agent allows you to extend the context of whatever questions you ask Copilot to the whole project.
+			- use the “@workspace /new” smart action, which allows you to generate a completely new project from scratch based on your requirements
+			- **@terminal:** This agent is useful for command-line related questions.
+			- **@vscode:** Use this agent to ask questions related to Visual Studio Code, such as how to debug or change settings within the IDE.
+---
+-   *Understand how to use GitHub Copilot on GitHub.com for repository exploration, pull request assistance, issue management, and collaborative code review workflows.*
+---
+-   *Understand how to interact with GitHub Copilot in CLI to get command explanations, suggestions, and execute commands to automate terminal workflows.*
 ----
 **Management and customization considerations with GitHub Copilot**
 ----
