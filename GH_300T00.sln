@@ -1,0 +1,59 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.2.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AZ2007LabAppM4", "AZ2007LabAppM4", "{887A011D-2B0C-DCFD-1005-0DC89C0B8213}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AccelerateDevGHCopilot", "AccelerateDevGHCopilot", "{9E2EAD46-1EAC-9073-3828-7E8A830C7612}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{1A60AC67-ADAE-0880-C74C-EDFA4BBA3B42}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests", "AZ2007LabAppM4\AccelerateDevGHCopilot\tests\UnitTests\UnitTests.csproj", "{15959D06-8826-C4D0-AE35-A67F0B95170B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{B3E3B59F-800B-A8A2-92D2-7FC7DF3D5B59}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library.Infrastructure", "AZ2007LabAppM4\AccelerateDevGHCopilot\src\Library.Infrastructure\Library.Infrastructure.csproj", "{09968762-21CF-1B3A-BF6C-F34D4874CE74}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library.ApplicationCore", "AZ2007LabAppM4\AccelerateDevGHCopilot\src\Library.ApplicationCore\Library.ApplicationCore.csproj", "{965E82D9-21C5-4320-8931-48A63E5F4E7F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library.Console", "AZ2007LabAppM4\AccelerateDevGHCopilot\src\Library.Console\Library.Console.csproj", "{B90F0E1D-FB84-4EC3-16F1-6A33B10AB996}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{15959D06-8826-C4D0-AE35-A67F0B95170B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15959D06-8826-C4D0-AE35-A67F0B95170B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15959D06-8826-C4D0-AE35-A67F0B95170B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15959D06-8826-C4D0-AE35-A67F0B95170B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{09968762-21CF-1B3A-BF6C-F34D4874CE74}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{09968762-21CF-1B3A-BF6C-F34D4874CE74}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{09968762-21CF-1B3A-BF6C-F34D4874CE74}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{09968762-21CF-1B3A-BF6C-F34D4874CE74}.Release|Any CPU.Build.0 = Release|Any CPU
+		{965E82D9-21C5-4320-8931-48A63E5F4E7F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{965E82D9-21C5-4320-8931-48A63E5F4E7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{965E82D9-21C5-4320-8931-48A63E5F4E7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{965E82D9-21C5-4320-8931-48A63E5F4E7F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B90F0E1D-FB84-4EC3-16F1-6A33B10AB996}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B90F0E1D-FB84-4EC3-16F1-6A33B10AB996}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B90F0E1D-FB84-4EC3-16F1-6A33B10AB996}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B90F0E1D-FB84-4EC3-16F1-6A33B10AB996}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{9E2EAD46-1EAC-9073-3828-7E8A830C7612} = {887A011D-2B0C-DCFD-1005-0DC89C0B8213}
+		{1A60AC67-ADAE-0880-C74C-EDFA4BBA3B42} = {9E2EAD46-1EAC-9073-3828-7E8A830C7612}
+		{15959D06-8826-C4D0-AE35-A67F0B95170B} = {1A60AC67-ADAE-0880-C74C-EDFA4BBA3B42}
+		{B3E3B59F-800B-A8A2-92D2-7FC7DF3D5B59} = {9E2EAD46-1EAC-9073-3828-7E8A830C7612}
+		{09968762-21CF-1B3A-BF6C-F34D4874CE74} = {B3E3B59F-800B-A8A2-92D2-7FC7DF3D5B59}
+		{965E82D9-21C5-4320-8931-48A63E5F4E7F} = {B3E3B59F-800B-A8A2-92D2-7FC7DF3D5B59}
+		{B90F0E1D-FB84-4EC3-16F1-6A33B10AB996} = {B3E3B59F-800B-A8A2-92D2-7FC7DF3D5B59}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D9F65BB1-255A-4354-B126-CEDCB0C7A927}
+	EndGlobalSection
+EndGlobal
