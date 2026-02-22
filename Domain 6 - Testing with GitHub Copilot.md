@@ -1,6 +1,24 @@
 # Domain 6: Testing with GitHub Copilot (9%)
 ## Describe the options for generating testing for your code
 - Describe how GitHub Copilot can be used to add unit tests, integration tests, and other test types to your code
+  - In Agent mode, agents can create/add unit test, integration test and other types of tests.
+    - As part of an orchestrated AI workflow - we can create a Test Agent and provide it skills to create test code for your current project.   
+  - '/test' - generates unit testse for the selected code snippet.
+  - Copilot for Chat
+    -  Generate tests through prompts
+  -  Subscription Plans
+    - Pro, Pro+, Business, Enterprise
+      - Features
+        - Automated test generation and code explanation features.
+  - Copilot can enhance your SDLC
+    - Testing and quality assurance
+      - Unit test creation
+      - Test data generation
+    - Automated testing workflows
+      - Test suite architecture
+      - Test autoamtion pipelines
+      - Quality gates
+      - Performance testing
 - Explain how GitHub Copilot can assist in identifying edge cases and suggesting tests to address them
   - Role prompting for specialized tasks
     - You can create a role for testing specialist.
@@ -19,3 +37,5 @@
 - Describe the different SKUs and the privacy considerations for GitHub Copilot
 - Describe the different code suggestion configuration options on the organization level
 - Describe the GitHub Copilot Editor config file
+
+Take a look this - https://learn.microsoft.com/en-us/training/modules/develop-unit-tests-using-github-copilot-tools/
