@@ -1,6 +1,33 @@
 # Domain 6: Testing with GitHub Copilot (9%)
 ## Describe the options for generating testing for your code
 - Describe how GitHub Copilot can be used to add unit tests, integration tests, and other test types to your code
+  - Uses your code's context and semantics to help write test cases for edge case and boundary conditions that might be difficult to identify manually.
+  - It can help with the following testing tasks:
+    -  set up testing frameworks, configuring testing frame works.
+       -  In chat view, command /setupTests
+       -  @Test
+    -  Generate test code; create unit, integration and end-to-end tests that cover app code.
+       - Generate unit test susing the following Copilot tools:
+         - Chat View
+         - Inline Chat
+         - Smart Actions
+         - Code line completions    
+    -  Handle edge cases; generate test suites to cover edge cases and error conditions.
+    -  Fix failing tests.
+       - /fixTestFailure command
+       - Within Test Explorer -> hover over the failing test and select *Fix Test Failure* button.
+    -  Maintain consistency.
+  -  VS Code support for unit tests
+     - C# Dev Kit support unit tests
+       - Test Explorer
+       - Run/Debug test cases
+       - View Test results
+       - Testing commands and settings
+       - Test Framework Package.
+     - Framework support
+       - xUnit
+       - NUnit
+       - MSTest
   - In Agent mode, agents can create/add unit test, integration test and other types of tests.
     - As part of an orchestrated AI workflow - we can create a Test Agent and provide it skills to create test code for your current project.   
   - '/test' - generates unit testse for the selected code snippet.
@@ -31,7 +58,8 @@
     - Reason:
       - This addresses the root cause of the failing test case.
       - Ensure that the functions handles null inputs correctly
-      - You can prevent future test failures and improve overall reliability of the code.   
+      - You can prevent future test failures and improve overall reliability of the code.
+  - Identify and write test cases for edge cases and boundary conditions that might be difficult to identify manually. For instance, Copilot can suggest test cases for error handling, null values, or unexpected input types.
 
 ## Describe the different SKUs for GitHub Copilot
 - Describe the different SKUs and the privacy considerations for GitHub Copilot
