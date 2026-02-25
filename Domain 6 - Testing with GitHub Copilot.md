@@ -1,13 +1,14 @@
 # Domain 6: Testing with GitHub Copilot (9%)
 ## Describe the options for generating testing for your code
 - Describe how GitHub Copilot can be used to add unit tests, integration tests, and other test types to your code
-  - Uses your code's context and semantics to help write test cases for edge case and boundary conditions that might be difficult to identify manually.
-  - It can help with the following testing tasks:
+  - Copilot uses your codes context and semantics to help write test cases for edge case and boundary conditions that might be difficult to identify manually.
+  - Copilot can help with the following testing tasks:
     -  set up testing frameworks, configuring testing frame works.
-       -  In chat view, command /setupTests
-       -  @Test
+       -  In chat view,
+         - command /setupTests
+         -  @Test
     -  Generate test code; create unit, integration and end-to-end tests that cover app code.
-       - Generate unit test susing the following Copilot tools:
+       - Generate unit test using the following Copilot tools:
          - Chat View
          - Inline Chat
          - Smart Actions
@@ -30,7 +31,7 @@
        - MSTest
   - In Agent mode, agents can create/add unit test, integration test and other types of tests.
     - As part of an orchestrated AI workflow - we can create a Test Agent and provide it skills to create test code for your current project.   
-  - '/test' - generates unit testse for the selected code snippet.
+  - '/test' - generates unit tests for the selected code snippet.
   - Copilot for Chat
     -  Generate tests through prompts
   -  Subscription Plans
@@ -47,11 +48,12 @@
       - Quality gates
       - Performance testing
 - Explain how GitHub Copilot can assist in identifying edge cases and suggesting tests to address them
-  - Role prompting for specialized tasks
+  - For Agents, Role prompting for specialized tasks
     - You can create a role for testing specialist.
     - The role can produce edge case handling
     - Suggest tests to address each edge case.
-  - Few-shot learning can help genearting sophisticated implementations that handle unique scenarios and edge cases, which in turn can help copilot suggest tests to address the edge cases.  
+  - Few-shot learning can help
+    - genearting sophisticated implementations that handle unique scenarios and edge cases, which in turn can help copilot suggest tests to address the edge cases.  
   - You can ask copilot to review a function to avoid any null checks.
     - Question: Copilot suggests a test case that fails because the function does not handle a null input correctly. What should you do?
     - Answer: ask Copilot Chat to rewrite the function to avoid any null checks
@@ -63,7 +65,65 @@
 
 ## Describe the different SKUs for GitHub Copilot
 - Describe the different SKUs and the privacy considerations for GitHub Copilot
+  - SKUs
+    - Copilot agent premium request - copilot_agent_premium_Request
+    - Copilot Enterprise - copilot_enterprise
+    - Copilot for Business - copilot_for_business
+    - Copilot for Premium request - copilot_for_Premium_request
+    - Copilot Standalone - copilot_standalone
+  - Privacy considerations
+    - Data usage for model training
+      -   Will not use prompots, suggestions or code snippets for API model traning.
+      -   Set by default in personal Copilot settings and cannot be nabled.
+    - Prompt and suggestion collection
+      - Personal accounts can choose to Allow or Block suggestions that match public code.
+      - For an Organization oe Enterprise account, the org/enterprise policy may override your personal settings.
+    - Web search (Bing) for Copilot Chat
+      - Users can enable or disable Copilot access to Bing web serach in personal settings.
+      - Org/Enterprise policies can also control this setting as well for a user.
+    - Enterprise/Organization policy control
+      - Can define global policies or delegate to organization owners.
+      - Sensitive privacy features (Suggestions matching public code or Copilot Metrics API) follow the most-resstric policy when a user has seats from multiple orgs.
+      - Many other features support least-restricve rule.
+      - If you are a member of an organization on GitHub Enterprise Cloud who has been assigned a GitHub Copilot seat through your organization, you will not be able to configure suggestions matching public code in your personal account settings.
+    - Enterprise-managed seats, privacy behavior is controlled by the enterprise/org policies rather than the individual's personal settings.
+    - If your organization or enterprise enables “Copilot in GitHub.com,” admins can choose to opt in to user feedback collection and preview features. Previews may have different data-handling terms — for DPA-covered previews see the DPA previews list
+    - Least vs Most Restrictive
+      - Least means, if any of the organizations has enabled a feature, this feature is eanbled for the user everywhere. Applies to all but the mroe sensitive Copilot features.
+      - Restrictive means, if any of the organizations has disabled a feature, this feature is disabled for the user in all their organizations. Applies only to the most sensitive Copilot features. Example: access to Copilot metrics using the API
 - Describe the different code suggestion configuration options on the organization level
+  - *Note - Copilot policies are also managed at the enterprise level. If your organization is part of an enterprise, and explicit settings have been selected at the enterprise level, you cannot override those settings at the organization level*
+  - You can control Copilot suggestion behavior and feature availability for an organization from the organization Settings → Copilot pages. Key organization‑level configuration options and where to change them:
+    - Opt-in options
+      - For Copilot Business or Enterprise Orgs and you can enable 'Copilot in GitHub.com', you can opt in to user feedback collection and previosu features.
+    - Copilot Autofix:
+      - administrators can disable Copilot Autofix at the organization level (if allowed at enterprise level).
+      - This is done from the organization Settings → Security → Advanced Security → Global settings → deselect Copilot Autofix
+    - Policy precedence: Copilot policies can also be managed at the enterprise level; enterprise‑level settings can override org settings
+  - Enable or disable Copilot in your IDE
+    - Configure from the extension/plugin UI in your editor (VS Code)
+  - Triggering suggestions manually
+    - macOS: Option + Command + /
+    - Windows/Linux: Ctrl + Alt + /
+  - Accepting suggestions / partial acceptance
+  - Next edit suggestions
+    - Predicts and navigates suggested edits
+    - Navigate with Tab, arrow in gutter indidcates avaliable eidt.
+    - Can be enable/disabled in IDE extension.
+  - Duplication detection / suggestions matching public code
+    - Duplication detenction may be enabled, if you get limited or no suggestions.
+    - Copilot Pro users
+      - can allow or block inline suggestions that match publicly avaiable code and
+      - control collection/retension of prompts/suggestions in personal settings.
+  - Advanced IDE-specific settings
+    - REbind keyboard shortcuts
+    - set auto-completion behavior
+    - Configure Proxy
+    - Authentication endpoing
+    - eanble/disable 'Accept suggestions with Tab
+    - Toggle nex-edit suggestions in IDE extension settings.
+  - Organization  / Enteprise feature contrtol
+    - For Copilot Business/Enterprise plans, orgs or enterprises must enable the Editor preview features policy to allow some preview features (like next-edit suggestions)
 - Describe the GitHub Copilot Editor config file
 
 Take a look this - https://learn.microsoft.com/en-us/training/modules/develop-unit-tests-using-github-copilot-tools/
