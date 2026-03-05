@@ -58,16 +58,77 @@
 # Use GitHub Copilot features (25–30%)
 ## Use GitHub Copilot in the IDE
 - **Enable Copilot in the IDE**
+  - Identify supported IDEs and platforms for GitHub Copilot
+  - Must have a GitHub account and be signed in to use GitHub Copilot in the IDE
+  - Install the GitHub Copilot extension or plugin for your IDE. Extension called GitHub Copilot.
+  - Enable or Display GitHub Copilot from the bottom pane of the IDE. Click on the GitHub Copilot icon to access settings and features.On the bottom pane of the VS Code window, select the status icon, and then select Enable or Disable.
 - **Trigger Copilot through inline suggestions, chat, CLI, and Plan Mode**
+  - Trigger inline suggestions by typing code in the editor, and GitHub Copilot will automatically provide suggestions based on the context of your code.
+  - Triggering GitHub Copilot Chat by opening the chat interface within the IDE, allowing you to ask questions and receive code suggestions in a conversational manner. For Windows its Ctrl + Shift + C, for Mac its Cmd + Shift + C.
+  - Triggering CLI you must have GitHub Copilot CLI installed and configured. You can then use the command line interface to interact with GitHub Copilot for various tasks, such as generating code snippets, managing files, and more.
+  - Triggering Plan Mode by using the appropriate command or interface within the IDE to enter Plan Mode, which allows you to create and manage plans for your development tasks with the assistance of GitHub Copilot.
 - **Exclude specific files or repositories (app knowledge)**
-
+  - At the repository level, GitHub-> Settings -> Code & automation -> select Copilot -> Respositories and paths to exclude.
+    - Exclude specific repositories or paths within a repository to prevent GitHub Copilot from providing suggestions for those areas.
+    - Exclude reporitories or paths that contain sensitive information, legacy code, or areas where you do not want AI-generated suggestions to be provided.
+  - At the organizations level, Your organizations -> (sidebar) Copilot -> Content exclusions -> 
+    - Exclude specific repositories or paths within an organization to prevent GitHub Copilot from providing suggestions for those areas across all repositories in the organization.
+  - At the IDE level, you can configure GitHub Copilot settings to exclude specific files or directories from receiving suggestions. This can typically be done through the settings or preferences of the GitHub Copilot extension in your IDE, where you can specify patterns or paths to exclude from suggestions.
+  - Excluding specific files or repositories can help to ensure that GitHub Copilot does not provide suggestions for sensitive or irrelevant code, and can help to improve the relevance and accuracy of suggestions in other areas of your codebase.
+  - Within the IDE settings to exclude files or directories you can in a file called .copilotignore, which is similar to .gitignore, where you can specify patterns for files or directories that you want GitHub Copilot to ignore when providing suggestions. This allows you to have more granular control over which parts of your codebase receive AI-generated suggestions and which parts are excluded.
 ## Use GitHub Copilot CLI
 - **Define GitHub Copilot CLI and how it benefits developers**
+  - GitHub Copilot CLI is a command-line utility that allows developers to interact with GitHub Copilot directly from the terminal.
+  - User GitHub authentication to access GitHub Copilot features and capabilities through the command line interface.
+  - Benefits of GitHub Copilot CLI include:
+    - Seamless integration with the command line, allowing developers to access GitHub Copilot features without leaving their terminal environment.
+    - Enhanced productivity by enabling developers to generate code snippets, manage files, and perform various tasks using GitHub Copilot directly from the command line.
+    - Flexibility in how developers can interact with GitHub Copilot, providing an alternative to the IDE-based experience and allowing for more efficient workflows in certain scenarios.  
+  - One shot mode: copilot -i - for question answers.
+  - Session mode: copilot -s - for multiple interactions and context retention.
+  - Copilot CLI configuration is managed through permission prompts, command-line flags, and local configuration files.
+    - Configuration options (common):
+    - Trusted directories: Define trusted directories where GitHub Copilot CLI can operate using flags like --trusted-dir or configuration files.
+    - Path permissions: Specify which paths GitHub Copilot CLI can access or modify using flags like --allow-path or --deny-path.
+    - URL permissions: Control access to specific URLs or domains for GitHub Copilot CLI using flags like --allow-url or --deny-url.
+    - Tools permissions:
+      - Allow or restrict Copilot from running shell commands or modifying files using flags like --allow-tool or --deny-tool.
+  - Configuration is handle via:
+    - Slash commands: copilot config set <option> <value>
+    - Copilot CLI configurations: (non-interactive mode)
 - **Identify the steps for installing GitHub Copilot CLI**
+  - Ensure you have Node.js installed on your system, as GitHub Copilot CLI is built on Node.js.
+  - Install GitHub Copilot CLI globally using npm (Node Package Manager) by running the following command in your terminal:
+    ```
+    npm install -g @githubnext/copilot-cli
+    ```
+  - After installation, you can verify that GitHub Copilot CLI is installed correctly by running:
+    ```
+    copilot --version
+    ```
+  - This should display the version of GitHub Copilot CLI that you have installed, confirming that the installation was successful.
+  - Using brew, you can install GitHub Copilot CLI on macOS by running the following command in your terminal:
+    ```
+    brew install github/copilot/copilot-cli
+    ```
+  - Using bash script, you can install GitHub Copilot CLI by running the following command in your terminal:
+    ```
+    curl -fsSL https://raw.githubusercontent.com/githubnext/copilot-cli/main/install.sh | sh
+    ```
 - **Describe key GitHub Copilot CLI features and commands**
+  - **One-shot mode**: Use the `copilot -i` command to ask a single question or request a code snippet, and receive an immediate response from GitHub Copilot.
+  - **Session mode**: Use the `copilot -s` command to start an interactive session with GitHub Copilot, allowing for multiple interactions and context retention throughout the session.
+  - **Configuration commands**: Use the `copilot config set <option> <value>` command to configure various settings for GitHub Copilot CLI, such as trusted directories, path permissions, URL permissions, and tool permissions.
+  - **File management commands**: Use commands like `copilot generate <file>` to generate code snippets or files based on prompts, and `copilot manage <file>` to manage existing files with GitHub Copilot CLI.
+  - **Help commands**: Use the `copilot help` command to access documentation and information about available commands and features of GitHub Copilot CLI, providing guidance on how to use the tool effectively in various scenarios
 - **Use GitHub Copilot CLI interactively and in sessions**
+  - copilot -s to start a session and maintain context across multiple interactions, allowing for a more conversational and iterative experience with GitHub Copilot CLI.
+    - Within a session, you can ask follow-up questions, request code modifications, or provide additional context to refine the suggestions provided by GitHub Copilot CLI, enhancing the overall development workflow and productivity.
+  - copilot -i for one-shot interactions, where you can ask a single question or request a code snippet without maintaining context across multiple interactions, providing a quick and efficient way to get specific information or code suggestions from GitHub Copilot CLI.
 - **Generate scripts and manage files with GitHub Copilot CLI**
-
+  - copilot generate <file> to generate code snippets or files based on prompts, allowing you to quickly create new code or files with the assistance of GitHub Copilot CLI.
+  - copilot manage <file> to manage existing files with GitHub Copilot CLI, enabling you to modify, refactor, or enhance existing code with the help of AI-generated suggestions and improvements, streamlining your development workflow and improving code quality.
+  
 ## Use GitHub Copilot features and capabilities
 - **Use Agent Mode, Edit Mode, and MCP for enhanced development and workflows; manage Agent Sessions and delegate tasks to Sub‑Agents for optimized context usage**
 - **Use Copilot for code review and coding assistance**
