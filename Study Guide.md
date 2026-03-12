@@ -2,13 +2,13 @@
 # Use GitHub Copilot responsibly (15–20%)
 ## Understand responsible AI principles
 - **Describe risks and limitations of Generative AI tools**
-  - Identify potential biases and ethical considerations in AI-generated content
-  - Explain the importance of human oversight and critical evaluation of AI outputs
-  - Discuss the implications of AI-generated content on privacy and security
-  - Recognize the potential for misuse of AI tools and the importance of responsible usage
-  - Explain the need for transparency and accountability in AI development and deployment
-  - Describe the role of developers in ensuring ethical AI usage
-  - Discuss the impact of AI on society and the workforce, and the importance of preparing for these changes
+  - Generative AI tools, such as GitHub Copilot, have several risks and limitations that users should be aware of when using these technologies. Some of the key risks and limitations include:
+    - Bias and Discrimination: Generative AI tools can perpetuate or amplify existing biases in data, leading to unfair treatment of certain groups or individuals. This can result in discriminatory outcomes and reinforce societal inequalities.
+    - Privacy Concerns: Generative AI tools may collect and use personal data in ways that violate user privacy. This can lead to unauthorized access to sensitive information and potential misuse of data.
+    - Misinformation and Manipulation: Generative AI tools can be used to create and spread misinformation or manipulate public opinion. This can have serious consequences for individuals and society as a whole, especially in the context of social media and online platforms.
+    - Job Displacement: The automation capabilities of generative AI tools can lead to job displacement in certain industries, as tasks that were previously performed by humans may be automated by AI systems.
+    - Security Risks: Generative AI tools can be vulnerable to attacks that exploit their weaknesses, such as adversarial attacks or data poisoning, which can compromise the integrity and security of the AI system.
+    - Ethical Concerns: The use of generative AI tools raises ethical concerns around accountability, transparency, and the potential for unintended consequences, which require careful consideration and responsible use to mitigate potential harms.
 - **Describe ethical and responsible AI usage**
   - AI usage should be guided by several key principles that ensure AI systems are developed and operated in a manner that is fair, safe, and beneficial to society. These principles include:
     - Fairness - AI systems should treat all people fairly: 
