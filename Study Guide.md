@@ -69,6 +69,14 @@
   - Triggering CLI you must have GitHub Copilot CLI installed and configured. You can then use the command line interface to interact with GitHub Copilot for various tasks, such as generating code snippets, managing files, and more.
   - Triggering Plan Mode by using the appropriate command or interface within the IDE to enter Plan Mode, which allows you to create and manage plans for your development tasks with the assistance of GitHub Copilot.
 - **Exclude specific files or repositories (app knowledge)**
+  - Only  Copilot Business & Enterprise supports
+    - Full content exclusion controls.
+    - Admins can prevent Copilot forms:
+      - Reading specific files
+      - Using exluced content to generate suggestions
+      - Using excluded content in Copilot Chat
+      - Including excluded files in copilot code reviews.
+    - Designed for compilance, privacy and regulated environments.
   - At the repository level, GitHub-> Settings -> Code & automation -> select Copilot -> Respositories and paths to exclude.
     - Exclude specific repositories or paths within a repository to prevent GitHub Copilot from providing suggestions for those areas.
     - Exclude reporitories or paths that contain sensitive information, legacy code, or areas where you do not want AI-generated suggestions to be provided.
