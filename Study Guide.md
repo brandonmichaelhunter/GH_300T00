@@ -214,6 +214,7 @@
       - Code reviews and feedback: GitHub Copilot Spaces can be used for code reviews and feedback sessions, enabling developers to share their code with others and receive constructive feedback to improve their work.
       - Knowledge sharing and learning: GitHub Copilot Spaces provides a platform for developers to share their knowledge and learn from others, fostering a culture of continuous learning and improvement within the development community.
   - GitHub Copilot Spark is a feature that provides real-time code suggestions and assistance as developers write code, helping to enhance productivity and code quality by offering relevant suggestions based on the context of the code being written.
+    - Avaliable for Enterprise and Pro+ subscribers only.
     - Benefits of GitHub Copilot Spark include:
       - Real-time code suggestions: GitHub Copilot Spark provides immediate suggestions as developers write code, helping to speed up the coding process and reduce the time spent on manual coding.
       - Context-aware assistance: GitHub Copilot Spark analyzes the context of the code being written and provides relevant suggestions, improving the accuracy and usefulness of the suggestions provided.
