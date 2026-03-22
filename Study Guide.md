@@ -314,35 +314,108 @@
 - **Explain data usage, flow, and sharing**
   - What is data usage in GitHub Copilot?
     - Data usage in GitHub Copilot refers to how the tool processes and utilizes data to generate code suggestions and assistance for developers. 
-    - This includes understanding how data is collected, processed, and shared within the context of GitHub Copilot's functionality.
-    - Use cases for understanding data usage in GitHub Copilot include:
-      - Privacy and security considerations: Understanding how data is used and shared by GitHub Copilot can help users make informed decisions about their privacy and security when using the tool, ensuring that they are aware of how their data is being handled and protected.
-      - Performance optimization: By understanding data usage, users can optimize their interactions with GitHub Copilot to improve performance and efficiency, such as by providing relevant context or prompts that align with the tool's data processing capabilities.
-      - Troubleshooting and issue resolution: Understanding data usage can help users troubleshoot any issues or errors they may encounter while using GitHub Copilot, allowing them to identify potential causes related to data handling and take appropriate steps to resolve them.
-  - Data flow in GitHub Copilot involves the movement of data from the user's input (such as code snippets, prompts, or commands) to the processing and generation of suggestions by GitHub Copilot, and then back to the user as output. This flow includes various stages such as input processing, prompt building, suggestion generation, and output delivery.
-  - Data sharing in GitHub Copilot refers to how data is shared between the user's environment (such as their IDE or code editor) and the GitHub Copilot service. This may involve sharing code snippets, prompts, and other relevant information with the GitHub Copilot service to enable it to generate relevant suggestions and assistance for the user. It is important to understand the data sharing practices of GitHub Copilot, including any privacy and security considerations, to ensure that users are aware of how their data is being used and shared when using the tool.
+    - Prompts are only used to generate responses.
+      - Copilot only process your input to produce an output.
+      - Prompts  or code are not used to train any models.
+      - applies to GitHub Copilot, Copilot in GitHub.com, and Copilot for Microsoft 365
+    - Enterprise version has strict data isloation
+      - For Copilot Business or Enterprise prompts and completions are not stored outside your organization and not used for training and processed within Microsoft secure infastructure.
+    - Context window ≠ long‑term storage
+      - Your code, prompt, and surrounding context are loaded into memory for the duration of the request
+      - There is no long‑term retention for model training
+      - Ephemeral Context (Short-Term Memory) vs Persistent Storage (Long-Term Memory) 
+        - Ephemeral Context is...
+          - short term memory, data help during the lifetime of the chat session. Use for follow up questions.
+          - 
+        - Persistent Storage 
+          - Copilot does use it. Long lasting data that remains even after the chat session ends.
+    - Telemetry is collected — but not your code
+      - Product telemetry  vs Prompt content 
+        - Product telemetry collects info for feature usage and performance metrics and does not include your code or prompts for model training.
+        - Prompt content collets info about your code and your questions.
+    - Responsible use: what you must know for the exam
+      - Avoid using sensitive data in your prompts
+      - Copilot code generate incorrect results and your should validate your outputs.
+    - Copilot Code Agent and data boundaries
+      - Agent executes tasks using your environment.
+      - Only access resources you tell it.
+      - Does not send your environment information back to Microsoft.
+    - Model behavior vs. data retention
+      - Model may generate patterns that look familar because it was trained on public and licened data.
+      - It does memorize nor recall your private code.
+      - Does not store your prompts for future use.
+  - Data Flow and Data Sharing
+    - Your prompt goes in → Copilot generates an answer → Done
+      - Copilot only use what you type and the surrouned context.
+      - It does not store code nor prompt you use to training the model.
+      - Input -> Output -> Forget
+    - Enterprise versions keep your data inside your organization
+      - For GitHub Copilot Business/Enterprise and Copilot for Microsoft 365:
+        - Prompts and competions are stay within your tenant.
+        - they are not used for traning models.
+        - They're process through Microsoft’s secure infrastructure
+    - Copilot uses a temporary context window, not long‑term storage
+      - Your data lives only long enough to generate the response. Data is disguarded, no rention and its no used for training models.
+      - Context is RAM, not a database.
+    - Telemetry is collected — but not your code
+      - Feature usage and performance metrics are collected only.
+    - Copilot only sees what you give it
+      - It only accesses the files or context you include
+      - Code Agent only touches what you explicitly authorize
+      - Doesn't scan your system nor repo.
+
 
 - **Describe input processing and prompt building**
   - What is input processing in GitHub Copilot in simple terms?
     - Input processing in GitHub Copilot refers to how the tool takes the user's input, such as code snippets, prompts, or commands, and processes it to understand the context and generate relevant suggestions. This involves analyzing the input to extract meaningful information, such as identifying the programming language, understanding the code structure, and determining the intent behind the user's input.
-    - Use cases for understanding input processing in GitHub Copilot include:
-      - Improving suggestion relevance: By understanding how GitHub Copilot processes input, users can provide more effective prompts and inputs that align with the tool's processing capabilities, leading to more relevant and accurate suggestions.
-      - Troubleshooting and issue resolution: If users encounter issues with the suggestions generated by GitHub Copilot, understanding input processing can help them identify potential causes related to how their input is being processed and take appropriate steps to resolve them.
-      - Optimizing interactions: By understanding input processing, users can optimize their interactions with GitHub Copilot by providing inputs that are more likely to yield useful suggestions, such as by including relevant context or structuring their prompts in a way that aligns with the tool's processing capabilities.
-  - Prompt building in GitHub Copilot refers to the process of constructing effective prompts that provide the necessary context and information for GitHub Copilot to generate relevant suggestions. This involves understanding how to structure prompts, what information to include, and how to provide context that aligns with the tool's capabilities to maximize the relevance and usefulness of the suggestions generated by GitHub Copilot.
-    - Benefits of understanding prompt building in GitHub Copilot include:
-      - Improved suggestion relevance: By building effective prompts, users can provide GitHub Copilot with the necessary context and information to generate more relevant and accurate suggestions, enhancing the overall usefulness of the tool.
-      - Enhanced productivity: Effective prompt building can help users get more relevant suggestions from GitHub Copilot, allowing them to work more efficiently and effectively by reducing the time spent on manual coding tasks and increasing the value of the suggestions provided by the tool.
-      - Better user experience: Understanding prompt building can lead to a better user experience with GitHub Copilot, as users can craft prompts that align with the tool's capabilities, resulting in more relevant and useful suggestions that enhance their coding experience and satisfaction with the tool.
+    - Think of Copilot as a “smart blender”
+      - The ingredients:
+        - Your prompt, the code around it, the file you are in and the conversation history.
+      - Copilot blend in all the ingredients into a super prompt to see to copilot.
+    - Copilot builds a structured prompt behind the scenes
+      - Inside the blender it adds the followingL:
+        - System and security rules 
+        - Developer instructions.
+        - Your input and any relevant context.
+        - Memory trick: “Copilot adds its own recipe to your ingredients.”
+    - Only the relevant pieces are included
+      - Copilot picks what you need and not dump your whole entire code base.
+      - The file you are working in.
+      - Near by code
+      - Snippets for reference
+      - Chat history that matters.
+      - Memory trick: “Only what helps gets blended.”
+    - The blended prompt is temporary
+       - results are never stored and never used for training a model.
+       - Memory trick: “Blend → Serve → Forget.”
+    - The model responds to the blended prompt, not just your words
+      - Memory trick: “Copilot answers the recipe, not just the ingredient.”
+
+    
 - **Explain proxy filtering and post-processing**
   - What is proxy filtering in GitHub Copilot in 4 bullet points?
     - Proxy filtering in GitHub Copilot refers to the process of filtering and refining the suggestions generated by the tool before they are presented to the user. This involves applying various filters and criteria to ensure that the suggestions are relevant, accurate, and aligned with the user's intent and context.
-    - Benefits of proxy filtering in GitHub Copilot include:
-      - Improved suggestion relevance: Proxy filtering helps to ensure that the suggestions presented to the user are relevant to their input and context, increasing the likelihood of generating useful and accurate suggestions.
-      - Enhanced user experience: By filtering out irrelevant or inaccurate suggestions, proxy filtering can enhance the overall user experience with GitHub Copilot, providing users with more valuable and actionable suggestions that align with their needs and preferences.
-      - Increased productivity: Proxy filtering can help users get more relevant suggestions from GitHub Copilot, allowing them to work more efficiently and effectively by reducing the time spent on manual coding tasks and increasing the value of the suggestions provided by the tool.
-      - Better code quality: By filtering out suggestions that may not meet certain criteria, such as coding standards or best practices, proxy filtering can help improve the overall quality of the code generated by GitHub Copilot, ensuring that it adheres to established guidelines and standards.
-  - Post-processing in GitHub Copilot refers to the additional processing and refinement of suggestions after they have been generated by the tool. This may involve applying additional filters, formatting, or adjustments to the suggestions to ensure that they are presented in a way that is most useful and relevant to the user. Post-processing can help to further enhance the relevance and usefulness of the suggestions generated by GitHub Copilot, providing users with more valuable and actionable suggestions that align with their needs and preferences.
+    - Proxy filtering = “Copilot’s security bouncer”
+      - Before your prompts reaches the model:
+        - Passes through a proxy filter
+        - Checks for unsafe, disallowed and senstive content.
+        - It blocks or sanitizes anything that violates safety rules
+      - Memory trick: “The bouncer checks your prompt before it enters the club.”
+    - Proxy filtering also cleans the context
+      - cleans\removes any secrets, keys, tokens and sensitive strings.
+      - Memory trick: “The bouncer takes away anything dangerous you’re carrying.”
+    - The model generates a response — but it’s not final yet
+      - after the model responds, Copilot doesn’t send it straight to you.
+      Memory trick: “The chef cooks the meal, but someone still checks it before serving.”
+    - Post‑processing = “Copilot’s quality control”
+      - Post processing checks models output for :
+        - Safey, Policy compliance, Sensitive data, armful or insecure code patterns
+      - If needed its:
+        - Edits, masks, rewrites or blocks the response.
+        - Memory trick: “Quality control inspects the dish before it reaches your table.”
+    - Together: Filter → Model → Post‑process
+      - Prompt → Proxy Filter → Model → Post‑Processing → Final Answer
+
 
 ## Understand lifecycle and limitations
 - **Visualize code suggestion lifecycle**
@@ -353,21 +426,42 @@
     - Proxy filtering: The generated suggestions are filtered and refined to ensure that they are relevant, accurate, and aligned with the user's intent and context before being presented to the user.
     - Post-processing: Additional processing may be applied to further enhance the relevance and usefulness of the suggestions before they are delivered to the user.
   - Benefits of visualizing the code suggestion lifecycle include:
-    - Improved understanding: Visualizing the code suggestion lifecycle can help users better understand how GitHub Copilot processes input and generates suggestions, allowing them to optimize their interactions with the tool for better results.
-    - Enhanced troubleshooting: By visualizing the lifecycle, users can identify potential issues or bottlenecks in the process, enabling them to troubleshoot and resolve any problems that may arise when using GitHub Copilot.
-    - Better prompt crafting: Understanding the lifecycle can inform users on how to craft effective prompts that align with each stage of the process, leading to more relevant and useful suggestions from GitHub Copilot.
-    - Increased productivity: By visualizing the code suggestion lifecycle, users can optimize their interactions with GitHub Copilot, leading to more efficient and effective use of the tool, ultimately enhancing their productivity and coding experience.
+    - Improved understanding: 
+    - Enhanced troubleshooting: 
+    - Better prompt crafting: 
+    - Increased productivity: 
 - **Describe limitations of LLMs and Copilot**
-  - The limitations of LLMs and Copilot include:
-    - Context limitations: LLMs and Copilot may have limitations in understanding complex or ambiguous prompts, which can affect the accuracy and relevance of the suggestions provided.
-    - Response variability: The responses generated by LLMs and Copilot may vary based on the input and context, which can lead to inconsistent suggestions or outputs.
-    - Language limitations: LLMs and Copilot may have limitations in understanding certain programming languages or specific coding patterns, which can impact their effectiveness in providing relevant suggestions.
-    - Ethical considerations: LLMs and Copilot may generate suggestions that raise ethical concerns, such as biased or inappropriate content, which can require careful consideration and management by users to ensure responsible use of the tool.
-  - Benefits of understanding the limitations of LLMs and Copilot include:
-    - Informed decision-making: Understanding the limitations of LLMs and Copilot can help users make informed decisions about how to use the tool effectively, taking into account its strengths and weaknesses to optimize their interactions and results.
-    - Improved troubleshooting: By understanding the limitations, users can better troubleshoot any issues or errors they may encounter when using LLMs and Copilot, allowing them to identify potential causes related to the tool's limitations and take appropriate steps to resolve them.
-    - Responsible use: Understanding the limitations of LLMs and Copilot can help users use the tool responsibly, being aware of potential ethical considerations and ensuring that they are using the tool in a way that aligns with their values and principles, while also being mindful of the potential impact of the suggestions generated by the tool.
-    - Enhanced user experience: By understanding the limitations, users can set realistic expectations for the tool and optimize their interactions accordingly, leading to a better user experience with LLMs and Copilot, as they can focus on leveraging the tool's strengths while being mindful of its limitations to achieve the best results in their coding tasks and projects.
+  - LLMs don’t “understand” — they predict
+    - LLMs generate the most likely next token, not true reasoning.
+    - Memory trick: “It’s pattern math, not brain power.”
+  - They can be confidently wrong
+     - LLM may produce wrong answers: Wrong answers, Fabricated details and Incorrect code.
+  - They don’t know your private codebase
+    - They don't your internap apis, business or infrastructure. 
+    - Memory trick: “If you don’t show it, it doesn’t know it.”
+  - No real memory
+    - LLMs don’t remember past sessions.
+    - Copilot uses a temporary context window, not long‑term storage. 
+  - They can’t guarantee secure or optimal code
+    - LLMs may generate:
+        - Insecure patterns
+        - Inefficient code
+        - Deprecated APIs
+    - Memory trick: “Always review before you commit.”
+  - Copilot specific limitations:
+    - Copilot only sees what you give it
+      - it doesn't scan your repo
+      - it only looks at your current file, near by code, and chat context.
+      - Memory trick: “No permission = no visibility.”
+    - Copilot can’t bypass safety rules
+      - Proxy filter and post processing may block:
+        - Block suggestions, Remove unsafe content, rewrite outputs.
+    - Copilot doesn’t replace testing or validation
+      - You must test, review and secure any changes copilot procedues.
+    - Copilot doesn’t understand your intent perfectly
+      - It guesses based on patterns.
+      - Memory trick: “Clear prompt, clear output.”
+
 
 # Apply prompt engineering and context crafting (10–15%)
 ## Craft effective prompts
