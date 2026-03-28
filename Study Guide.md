@@ -470,8 +470,12 @@
     - Clear and concise instructions: Providing clear and specific instructions in the prompt to guide GitHub Copilot in generating relevant suggestions.
     - Relevant context: Including relevant context in the prompt, such as code snippets, project information, or specific requirements, to help GitHub Copilot understand the user's intent and generate more accurate suggestions.
     - Specific questions or requests: Formulating specific questions or requests in the prompt to elicit targeted suggestions from GitHub Copilot, allowing users to get more relevant and useful responses.
+    - Summary: Clear and specific instructions, relevant context, include code snippets, and other files to include in th problem and keep your statement focused and specific.
+      - Memory trick: “The prompt is the recipe for your code dish.”
   - What makes a good prompt for GitHub Copilot?
-    - A good prompt for GitHub Copilot is one that is clear, concise, and provides relevant context to guide the tool in generating accurate and useful suggestions. It should include specific instructions or questions that align with the user's intent and the capabilities of GitHub Copilot, allowing for more targeted and relevant suggestions. Additionally, a good prompt should be structured in a way that is easy for GitHub Copilot to understand and process, maximizing the effectiveness of the tool in providing valuable assistance to developers.
+    - A good prompt for GitHub Copilot is one that is clear, concise, and provides relevant context to guide the tool in generating accurate and useful suggestions. 
+    - It should include specific instructions or questions that align with the user's intent and the capabilities of GitHub Copilot, allowing for more targeted and relevant suggestions. 
+    - Additionally, a good prompt should be structured in a way that is easy for GitHub Copilot to understand and process, maximizing the effectiveness of the tool in providing valuable assistance to developers.
   - Benefits of crafting effective prompts for GitHub Copilot include:
     - Improved suggestion relevance: Effective prompts can help GitHub Copilot generate more relevant and accurate suggestions, enhancing the overall usefulness of the tool for developers.
     - Enhanced productivity: By crafting effective prompts, users can get more relevant suggestions from GitHub Copilot, allowing them to work more efficiently and effectively by reducing the time spent on manual coding tasks and increasing the value of the suggestions provided by the tool.
@@ -482,11 +486,19 @@
     - Code structure and patterns: GitHub Copilot considers the structure of the code and any patterns present in the input to determine the context and generate suggestions that align with the coding style and conventions used by the user.
     - Project information: GitHub Copilot may also take into account project-specific information, such as dependencies, libraries, or frameworks being used, to provide suggestions that are relevant to the specific project context.
     - User preferences: GitHub Copilot may consider user preferences and past interactions to personalize suggestions based on the user's coding style and preferences, further enhancing the relevance of the suggestions provided.
+    - Summerize: Context in GitHub Copilot is determine by analysing user input, code structure and patterns, include project informaiton such as dependencies, librarys or frameworks using within the code base and user preferences and previous interactions.
+      - Memory trick: “Copilot reads the room — your code, your project, and your style.”
 - **Use zero-shot and few-shot prompting**
-  - Zero-shot prompting in GitHub Copilot refers to providing a prompt without any specific examples or context, relying solely on the tool's understanding of the input to generate suggestions. This can be useful for generating suggestions based on general knowledge or for tasks that do not require specific examples.
-  - Few-shot prompting in GitHub Copilot involves providing a prompt with a few examples or context to guide the tool in generating more relevant suggestions. This can be beneficial for tasks that require specific patterns or examples to generate accurate suggestions, allowing users to provide additional information to help GitHub Copilot understand the desired output more effectively.
+  - Zero-shot prompting in GitHub Copilot refers to 
+    - Providing a prompt without any specific examples or context, relying solely on the tool's understanding of the input to generate suggestions. 
+    - Useful for generating suggestions based on general knowledge or for tasks that do not require specific examples.
+  - Few-shot prompting in GitHub Copilot involves 
+    - Providing a prompt with a few examples or context to guide the tool in generating more relevant suggestions. 
+    - Useful for tasks that require specific patterns or examples to generate accurate suggestions, allowing users to provide additional information to help GitHub Copilot understand the desired output more effectively.
   - Benefits of using zero-shot and few-shot prompting in GitHub Copilot include:
-    - Flexibility: Zero-shot prompting allows users to generate suggestions without needing to provide specific examples, making it useful for a wide range of tasks and scenarios. Few-shot prompting provides flexibility by allowing users to provide additional context when needed, enhancing the relevance of suggestions for more complex tasks.
+    - Flexibility: 
+      - Zero-shot prompting allows users to generate suggestions without needing to provide specific examples, making it useful for a wide range of tasks and scenarios. 
+      - Few-shot prompting provides flexibility by allowing users to provide additional context when needed, enhancing the relevance of suggestions for more complex tasks.
     - Improved suggestion relevance: Few-shot prompting can help improve the relevance of suggestions by providing specific examples or context, allowing GitHub Copilot to better understand the user's intent and generate more accurate suggestions.
     - Enhanced user experience: By using zero-shot and few-shot prompting appropriately, users can optimize their interactions with GitHub Copilot, leading to a better user experience as they can receive relevant and useful suggestions that align with their needs and preferences.
 - **Apply best practices for prompt crafting**
@@ -503,11 +515,19 @@
 ## Engineer prompts for performance
 - **Explain prompt engineering principles**
   - What are the prompt engineering principles for GitHub Copilot:
-    - Clarity: Ensure that prompts are clear and specific to guide GitHub Copilot in generating relevant suggestions. Avoid ambiguity and provide explicit instructions to improve the accuracy of suggestions.
-    - Contextual relevance: Include relevant context in prompts, such as code snippets, project information, or specific requirements, to help GitHub Copilot understand the user's intent and generate more accurate suggestions.
-    - Specificity: Formulate specific questions or requests in prompts to elicit targeted suggestions from GitHub Copilot, allowing users to get more relevant and useful responses.
-    - Iteration: Experiment with different prompt structures and formats to find what works best for your specific use case. Iterating on your prompts can help optimize the suggestions generated by GitHub Copilot over time.
-    - Feedback: Provide feedback on the suggestions generated by GitHub Copilot to help it learn and improve its suggestions in the future, enhancing the overall performance of the tool and improving the relevance of suggestions for your specific needs and preferences.
+    - Clarity: 
+      - Ensure that prompts are clear and specific to guide GitHub Copilot in generating relevant suggestions. 
+      - Avoid ambiguity and provide explicit instructions to improve the accuracy of suggestions.
+    - Contextual relevance: 
+      - Include relevant context in prompts, such as code snippets, project information, or specific requirements, to help GitHub Copilot understand the user's intent and generate more accurate suggestions.
+    - Specificity: 
+      - Formulate specific questions or requests in prompts to elicit targeted suggestions from GitHub Copilot, allowing users to get more relevant and useful responses.
+    - Iteration: 
+      - Experiment with different prompt structures and formats to find what works best for your specific use case. Iterating on your prompts can help optimize the suggestions generated by GitHub Copilot over time.
+    - Feedback: 
+      - Provide feedback on the suggestions generated by GitHub Copilot to help it learn and improve its suggestions in the future, enhancing the overall performance of the tool and improving the relevance of suggestions for your specific needs and preferences.
+    - Summary: Principles for prompt engineering include clarity, context relevance, specificity, iteration, and feedback.
+      - Memory trick: “Good prompts = good suggestions.”
   - Benefits of understanding prompt engineering principles for GitHub Copilot include:
     - Improved suggestion relevance: By applying prompt engineering principles, users can help GitHub Copilot generate more relevant and accurate suggestions, enhancing the overall usefulness of the tool for developers.
     - Enhanced productivity: Effective prompt engineering can lead to more relevant suggestions, allowing users to work more efficiently and effectively by reducing the time spent on manual coding tasks and increasing the value of the suggestions provided by GitHub Copilot.
@@ -519,8 +539,18 @@
     - Suggestion generation: GitHub Copilot generates suggestions based on the processed input and built prompts, utilizing its AI capabilities to provide relevant code suggestions and assistance.
     - Proxy filtering: The generated suggestions are filtered and refined to ensure that they are relevant, accurate, and aligned with the user's intent and context before being presented to the user.
     - Post-processing: Additional processing may be applied to further enhance the relevance and usefulness of the suggestions before they are delivered to the user.
-  - Chat history usage in GitHub Copilot refers to how the tool utilizes past interactions and conversations with the user to inform its suggestions. This may involve analyzing previous prompts, suggestions, and feedback provided by the user to personalize future suggestions based on their coding style, preferences, and past interactions. By leveraging chat history, GitHub Copilot can provide more relevant and tailored suggestions that align with the user's needs and preferences over time.
- - Chat History usage is maintained is stored for 30 days, and is used to improve the relevance of suggestions by providing context from previous interactions. This allows GitHub Copilot to learn from the user's coding style and preferences, enhancing the overall user experience and the quality of suggestions provided by the tool.
+    - Summary: The prompt process flow in GitHub Copilot includes:
+      - Input processing -> processing user input to understand context and intent.
+      - Prompt building -> constructing effective prompts with necessary context and information.
+      - Suggestion generation -> generating relevant suggestions based on processed input and built prompts.
+      - Proxy filtering -> filtering and refining suggestions for relevance and accuracy.
+      - Post-processing -> enhancing suggestions before delivering to the user.
+  - Chat history usage in GitHub Copilot refers 
+    - To how the tool utilizes past interactions and conversations with the user to inform its suggestions. 
+    This may involve analyzing previous prompts, suggestions, and feedback provided by the user to personalize future suggestions based on their coding style, preferences, and past interactions. 
+    - By leveraging chat history, GitHub Copilot can provide more relevant and tailored suggestions that align with the user's needs and preferences over time.
+    - Chat history usage is maintained for 30 days and is used to improve the relevance of suggestions by providing context from previous interactions. 
+      - This allows GitHub Copilot to learn from the user's coding style and preferences, enhancing the overall user experience and the quality of suggestions provided by the tool.
 
 # Improve developer productivity with GitHub Copilot (10–15%)
 ## Enhance productivity and code quality
