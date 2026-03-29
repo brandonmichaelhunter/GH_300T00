@@ -722,51 +722,182 @@
 ## Manage privacy settings and exclusions
 - **Configure content exclusions and editor settings**
   - GitHub Copilot allows users to configure content exclusions in the following ways:
-    - Exclude specific files or directories: Users can specify certain files or directories that they want to exclude from GitHub Copilot's suggestions, ensuring that the tool does not generate suggestions for those specific areas of their codebase.
-    - Exclude specific programming languages: Users can choose to exclude certain programming languages from GitHub Copilot's suggestions, allowing them to focus on specific languages or frameworks that are relevant to their projects.
-    - Exclude specific types of suggestions: Users can configure GitHub Copilot to exclude certain types of suggestions, such as code snippets, documentation, or test cases, based on their preferences and needs.
-  - GitHub Copilot allows users to configure editor settings in the following ways:
-    - Enable or disable GitHub Copilot: Users can choose to enable or disable GitHub Copilot in their code editor, allowing them to control when and how they want to use the tool for code suggestions.
-    - Customize suggestion behavior: Users can configure GitHub Copilot's suggestion behavior, such as adjusting the frequency of suggestions, controlling the level of detail in suggestions, or specifying the types of suggestions they want to receive.
-    - Set preferences for specific languages or frameworks: Users can customize GitHub Copilot's behavior for specific programming languages or frameworks, allowing them to tailor the suggestions to their specific needs and preferences.
-  - Configuration files can be used to specify content exclusions and editor settings for GitHub Copilot, allowing users to easily manage and customize their preferences for the tool's behavior and suggestions. The file name is called `copilot.config.json` and can be placed in the root directory of the project or in the user's home directory for global settings. This file allows users to define their content exclusions and editor settings in a structured format, making it easier to manage and maintain their preferences for GitHub Copilot's behavior and suggestions.
+    - Exclude specific files or directories: 
+      - Users can specify certain files or directories that they want to exclude from GitHub Copilot's suggestions, ensuring that the tool does not generate suggestions for those specific areas of their codebase.
+    - Exclude specific programming languages: 
+      - Users can choose to exclude certain programming languages from GitHub Copilot's suggestions, allowing them to focus on specific languages or frameworks that are relevant to their projects.
+    - VS Code settings options:
+      - Add copilot.ignore file (recommended for project-specific exclusions) - add patterns just like .gitignore.
+      - copilot.config.json for more granular control.
+      - VS Code Settings -> Settings -> Extensions -> GitHub Copilot -> Advance (disable for language)
+        - Add to settings.json:
+          - "githubCopilot.exclude": [
+              "**/node_modules/**",
+              "**/dist/**",
+              "**/*.md"
+            ]
+      - Disable Copilot for the workspace
+        - .vscode/settings.json
+        - "githubCopilot.enable": false
+        - Disable inline suggestions for certain file types:
+          - "editor.inlineSuggest.enabled": false
+    - Excluding Files/Directories in GitHub.com settings
+      - Provides you repository-level and organization-level controls.
+      - Repository Settings -> Copilot -> Block file paths
+        - Repo → Settings → GitHub Copilot → Policies → Block file paths
+      - Organization Settings → Copilot → Block file paths
+        - Organization → Settings → GitHub Copilot → Policies → Block file paths
+      - Disable Copilot for specific languages:
+        - Repository Settings → Copilot → Block languages
+        - Organization Settings → Copilot → Block languages
+        - This includes for files -> YAML, Terraform, PowerShell, Markdown, etc...
+    - Memory Tip:
+      - copilot.ignore - is the correct answer for repo-level file exclusion.
+      - GitHub.com "Block file paths" overrides local settings and is ideal for org/repo-level control.
+      - Excluding files does NOT prevent developers from opening them.
+      - Exclusion apply to:
+        - Copilot Chat, Inline suggestions, Code completions and referencing.
+    
+    - Exclude specific types of suggestions: 
+      - Users: can configure Copilot to exclude certain types of suggestions, such as code snippets, documentation or test cases, based on their preferences and needs.
+        - GitHub.com Settings → Copilot → Policies → Block suggestion types
+           - Memory Tip: "Block suggestion types" is your go-to for excluding specific types of suggestions across your organization or repository.
+      - Customize suggestion behavior: Users can configure GitHub Copilot's suggestion behavior, such as adjusting the frequency of suggestions, controlling the level of detail in suggestions, or specifying the types of suggestions they want to receive.
+         - GitHub.com Settings → Copilot → Policies → Suggestion behavior
+           - Memory Tip: "Suggestion behavior" settings allow you to fine-tune how and when you receive suggestions, giving you control over the level of assistance from Copilot.
 - **Describe ownership and limitations of outputs**
   - The ownership and limitations of outputs generated by GitHub Copilot are as follows:
-    - Ownership: The outputs generated by GitHub Copilot are owned by the user who is using the tool. Users have the rights to use, modify, and distribute the outputs generated by GitHub Copilot in accordance with their own preferences and needs.
-    - Limitations: The outputs generated by GitHub Copilot may have limitations in terms of accuracy, relevance, and completeness. The suggestions provided by GitHub Copilot are based on patterns and data it has been trained on, and may not always be perfect or suitable for every use case. Users should review and validate the suggestions generated by GitHub Copilot to ensure that they meet their specific requirements and standards before using them in their projects.
+    - Ownership: 
+      - GitHub/Microsoft do not claim ownership of the outputs generated by GitHub Copilot.
+      - You can use, modify, license or commercialize the outputs.
+      - User using the tool owns the outputs generated by GitHub Copilot. 
+      - Users have control over the suggestions generated by GitHub Copilot and are aware of the potential limitations of those suggestions.
+      - Users have the rights to use, modify, and distribute the outputs generated by GitHub Copilot in accordance with their own preferences and needs.
+    - Limitations: 
+      - The outputs generated by GitHub Copilot may have limitations in terms of accuracy, relevance, and completeness. 
+      - GitHub Copilot suggestions are based on patterns and data it has been trained on, and may not always be perfect or suitable for every use case. 
+      - Users should review and validate the suggestions generated by GitHub Copilot to ensure that they meet their specific requirements and standards before using them in their projects.
+      - Copilot is trained on public code.
+      - Ouputs may resemble existing open sourcd doe, not guarantee originality nor license compatibility.
+      - Users should review outputs for: license conflicts, security vulnerabilities, and suitability for their specific use case.
+      - Does Copilot guarantees "clean room" code? No, developers must review outputs.
   - Benefits of understanding ownership and limitations of outputs generated by GitHub Copilot include:
-    - Informed decision-making: Understanding the ownership and limitations of outputs can help users make informed decisions about how to use the suggestions generated by GitHub Copilot, ensuring that they are used appropriately and in a way that aligns with their needs and preferences.
-    - Improved code quality: By being aware of the limitations of outputs, users can review and validate the suggestions generated by GitHub Copilot to ensure that they meet their specific requirements and standards, leading to improved code quality and better outcomes for their projects.
-    - Responsible use: Understanding ownership and limitations can help users use GitHub Copilot responsibly, being mindful of the potential impact of the suggestions generated by the tool and ensuring that they are used in a way that aligns with ethical considerations and best practices in software development.
-  - Ownership and limitations of outputs are used to ensure that users have control over the suggestions generated by GitHub Copilot and are aware of the potential limitations of those suggestions, allowing them to make informed decisions about how to use the tool effectively while also being mindful of its limitations and potential impact on their projects. By understanding ownership and limitations, users can optimize their interactions with GitHub Copilot and leverage its capabilities in a way that best suits their needs and preferences, while also ensuring responsible use of the tool in their software development practices.
-  - Ownership and limitations of outputs can be configured in the `copilot.config.json` file, allowing users to specify their preferences for how the outputs generated by GitHub Copilot are handled and used in their projects. This configuration can help users manage their expectations and ensure that they are using the tool in a way that aligns with their needs and preferences, while also being mindful of the potential limitations of the suggestions generated by GitHub Copilot.
+    - Informed decision-making: 
+      - Understanding the ownership and limitations of outputs can help users make informed decisions about how to use the suggestions generated by GitHub Copilot, ensuring that they are used appropriately and in a way that aligns with their needs and preferences.
+    - Improved code quality: 
+      - By being aware of the limitations of outputs, users can review and validate the suggestions generated by GitHub Copilot to ensure that they meet their specific requirements and standards, leading to improved code quality and better outcomes for their projects.
+    - Responsible use: 
+      - Understanding ownership and limitations can help users use GitHub Copilot responsibly, being mindful of the potential impact of the suggestions generated by the tool and ensuring that they are used in a way that aligns with ethical considerations and best practices in software development.
+  - Ownership and limitations of outputs can be configured in the `copilot.config.json` file, allowing users to specify their preferences for how the outputs generated by GitHub Copilot are handled and used in their projects. 
 
 ## Apply safeguards and troubleshoot
 - **Enable duplication detection and security warnings**
   - Duplication detection in GitHub Copilot is:
-    - A feature that helps identify and prevent duplicate code suggestions generated by GitHub Copilot. It analyzes the codebase and the suggestions generated by the tool to detect any potential duplicates, allowing users to avoid redundant code and maintain a cleaner codebase.
+    - A feature that helps identify and prevent duplicate code suggestions generated by GitHub Copilot. 
+    - It analyzes the codebase and the suggestions generated by the tool to detect any potential duplicates, allowing users to avoid redundant code and maintain a cleaner codebase.
+    - Detects when Copilot generates code that is highly similar to publicly available code.
+    - Warns the developer that the suggestions may be: copyrighted, licensed under terms incompatible with your project, or non-original.
+      - Helps prevents accidental inclusion of code that could create IP or license risk.
+    - Deduplication detection is a warning system, not a filter that blocks all risky code.
   - Security warnings in GitHub Copilot are:
-    - Alerts or notifications provided by GitHub Copilot when it detects potential security vulnerabilities or issues in the code suggestions it generates. These warnings can help users identify and address potential security risks in their code, ensuring that they are following best practices for secure coding and protecting their applications from potential threats.
-  - Duplication detection and security warnings can be enabled in GitHub Copilots:
-    - Access the settings or preferences of your IDE (such as Visual Studio Code, JetBrains IDEs, etc.).
-    - Look for the GitHub Copilot extension or plugin and navigate to its settings.
-    - Enable the duplication detection feature to allow GitHub Copilot to identify and prevent duplicate code suggestions.
-    - Enable security warnings to receive alerts when GitHub Copilot detects potential security vulnerabilities in the code suggestions it generates.
-    - Save the settings and start using GitHub Copilot with duplication detection and security warnings enabled to enhance the quality and security of the code suggestions provided by the tool.
-  - Benefits of enabling duplication detection and security warnings in GitHub Copilot include:
-    - Improved code quality: By enabling duplication detection, users can avoid redundant code suggestions, leading to a cleaner and more maintainable codebase. Security warnings can help users identify and address potential security vulnerabilities in the code suggestions, ensuring that they are following best practices for secure coding and protecting their applications from potential threats.
-    - Enhanced productivity: Enabling duplication detection can save time and effort by preventing redundant code suggestions, allowing users to focus on more relevant and useful suggestions. Security warnings can help users proactively address potential security risks, reducing the likelihood of security breaches and improving the overall security posture of their applications.
-    - Better user experience: By enabling duplication detection and security warnings, users can have a better experience with GitHub Copilot, as they can receive more relevant and secure code suggestions that align with their needs and preferences, enhancing their coding experience and satisfaction with the tool.
+    - Alerts or notifications provided by GitHub Copilot when it detects potential security vulnerabilities or issues in the code suggestions it generates. 
+    - Detect insecure patterns in generated code.
+    - These warnings can help users identify and address potential security risks in their code, ensuring that they are following best practices for secure coding and protecting their applications from potential threats.
+    - Highlights potential vulnerabilities such as: SQL Injection, hardcoded secrets, unsafe deserialization, insecure cryptography, missing input validation, outdated or vulnerable libraries.
+      - These warnings appear in: Copilot chat or inline suggestion or PR summaries and code referencing explanations.
+  - How to enable these features:
+    - GitHub.com
+      - Organization settings -> GitHub Copilot -> Policies
+      - Repository settings -> GitHub Copilot -> Policies
+      - Admins can enforce: Deduplication detection, security warnings, blocked file paths, lanauge restrictions.
+    - VS Code
+      - These features are automatically active when using: GitHub Copilot chat, inline suggestion or for PRs.
+      - You cannot manually toggle them in VS code, they are controlled by Copilot policy.
+  - Memorize:
+    - Deduplication Detection
+      - Warns when generated code resembles public code.
+      - Helps avoid copyright/licensing issues.
+      - Does not guarantee originality.
+      - Controlled by org/repo policies.
+    - Security Warnings
+      - Warn about insecure patterns in generated code.
+      - Do not guarantee security.
+      - Do not replace code scanning.
+      - Developers must review and validate.
+    - Policy Hierarchy
+      - Org‑level > Repo‑level > Editor settings.
 - **Resolve issues with suggestions and exclusions**
   - To resolve issues with suggestions and exclusions in GitHub Copilot, users can take the following steps:
     - Review the suggestions generated by GitHub Copilot to identify any issues or inaccuracies. If a suggestion is not relevant or accurate, users can provide feedback to GitHub Copilot to help it learn and improve its suggestions in the future.
     - Check the content exclusions configured in GitHub Copilot to ensure that they are set up correctly. If certain files, directories, programming languages, or types of suggestions are excluded, users can review and adjust these exclusions as needed to ensure that they align with their preferences and project requirements.
-    - If there are specific issues with suggestions or exclusions that cannot be resolved through feedback or adjustments, users can reach out to GitHub support for further assistance. They can provide details about the issue they are facing and seek guidance on how to resolve it effectively.
-  - Benefits of resolving issues with suggestions and exclusions in GitHub Copilot include:
-    - Improved suggestion relevance: By addressing issues with suggestions and exclusions, users can help GitHub Copilot generate more relevant and accurate suggestions, enhancing the overall usefulness of the tool for their development workflow.
-    - Enhanced user experience: Resolving issues with suggestions and exclusions can lead to a better user experience with GitHub Copilot, as users can receive more relevant and useful suggestions that align with their needs and preferences, enhancing their coding experience and satisfaction with the tool.
-    - Increased productivity: By resolving issues with suggestions and exclusions, users can optimize their interactions with GitHub Copilot, allowing them to work more efficiently and effectively by reducing the time spent on manual coding tasks and increasing the value of the suggestions provided by the tool. This can lead to improved productivity and better outcomes for their projects. 
-
+    - If there are specific issues with suggestions or exclusions that cannot be resolved through feedback or adjustments, users can reach out to GitHub support for further assistance. They can provide details about the issue they are facing and seek guidance on how to resolve it effectively. 
+  - Why copilot suggestions go wrong:
+    - Missing or weak context in the prompt.
+    - Conflicing context (outdated code in files).
+    - Exluded files not being properly configured.
+    - Ambiguous prompts.
+    - Lack of inline comments or function signatures.
+    - Incorrect language or framework detection.
+    - Workspace misconfiguration. 
+      - Limitations of the underlying AI model.
+  - how to improve suggestion quality
+    - Strengthen context
+      - add comments describing intent and expected behavior.
+      - add function signatures.
+      - provide examples of desired output.
+      - provide explicit instructions.
+    - Use context-crafting techniques
+      - Few-shot prompting with relevant examples.
+      - Zero-shot prompting with clear instructions.
+      - Provide constraints, patterns and examples.
+    - Reduce noise
+      - Close irrelevant files
+      - Remove outdated code
+      - Clean up unused imports
+    - Use slash commands in Copilot
+      - /explain to get natural language explanations of code.
+      - /test to generate test cases for a function.
+      - /refactor to suggest improvements to existing code.
+      - /document to create docstrings or comments for code.
+      - /optimize to suggest performance improvements for code.
+  - How exclusion Works
+    - Copilot.ignore (repo-level file exclusions) - add patterns just like .gitignore - prevents copilot from using specific files as context.
+    - GitHub.com Policies (org/repo level)
+      - Admins can block file paths, languages, suggestion types and control suggestion behavior.
+    - These policies override local settings and are ideal for organization-wide or repository-wide control.
+    - Editor settings: Developers can disable copilot for: specific languages, workspace, inline suggestions.
+  - Hierarchy of controls:
+    - Organization-level policies (highest priority)
+    - Repository-level policies
+    - Editor settings (lowest priority)
+  - Common Issues with Exclusion and solutions:
+    - Copilot still references excluded files: copilot.ignore is mis -forrmatted or wrong paths patterns or file is open in the editor or rog-level policies override local settings.
+      - Solution: Improve prompt clarity
+        - State intent
+        - Provide constraints
+        - Provide examples.
+        - Review and correct copilot.ignore patterns, close excluded files in the editor, check for org/repo policies that may override local settings.
+    - Copilot suggestions include sensitive data: sensitive files not excluced, developer provided the sensitive data int the prompt and chat history includes sensitive content.
+      - Solution: Reduce context noise: 
+        - Close unrelated files, 
+        - Clean up workspace
+        - Remove outdated code.
+    - Copilot suggestions are irrelevant
+      - Too many files open, weak or ambiguous prompt, wrong lanague mode or workspace misconfigured.
+      - Solution: User copilot chat to refine. Ask:
+        - Rewrite this using best practices
+        - Fix this security issue
+        - Explain why this suggestion is incorrect.
+  - Memorize
+    - Improving suggestions
+      - Strengthen context, reduce noise, use explicit instructions and Copilot Chat.
+    - Exclusion Mechanisms
+      - copilot.ignore, GitHub.com Policies and VS Code settings.
+    - Troubleshooting
+      - Check exclusion patterns
+      - Close irrelevant files
+      - Fix ambigous prompts
+      - Validate org/repo policies.
 
 # Additional Notes:
  - Contractual protections
