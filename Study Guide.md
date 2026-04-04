@@ -117,7 +117,9 @@
     - Exclude specific repositories or paths within an organization to prevent GitHub Copilot from providing suggestions for those areas across all repositories in the organization.
   - At the IDE level, you can configure GitHub Copilot settings to exclude specific files or directories from receiving suggestions. This can typically be done through the settings or preferences of the GitHub Copilot extension in your IDE, where you can specify patterns or paths to exclude from suggestions.
   - Excluding specific files or repositories can help to ensure that GitHub Copilot does not provide suggestions for sensitive or irrelevant code, and can help to improve the relevance and accuracy of suggestions in other areas of your codebase.
-  - Within the IDE settings to exclude files or directories you can in a file called .copilotignore, which is similar to .gitignore, where you can specify patterns for files or directories that you want GitHub Copilot to ignore when providing suggestions. This allows you to have more granular control over which parts of your codebase receive AI-generated suggestions and which parts are excluded.
+  - Within the IDE settings to exclude files or directories
+    - Create a file called coiplot.ignore, which is similar to .gitignore, where you can specify patterns for files or directories that you want GitHub Copilot to ignore when providing suggestions.
+    - This allows you to have more granular control over which parts of your codebase receive AI-generated suggestions and which parts are excluded.
 ## Use GitHub Copilot CLI
 - **Define GitHub Copilot CLI and how it benefits developers**
   - GitHub Copilot CLI is a command-line utility that allows developers to interact with GitHub Copilot directly from the terminal.
