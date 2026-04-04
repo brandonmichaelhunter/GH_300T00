@@ -74,21 +74,6 @@
         - Sanitize user input
         - Avoid feeding unstructed text directly into prompts
         - Use guardrais and validation layers.
-    - Bias and Discrimination: 
-      - AI systems can perpetuate or amplify existing biases in data, leading to unfair treatment of certain groups. 
-      - Mitigation strategies include using diverse and representative training data, regularly auditing AI systems for bias, and implementing fairness-aware algorithms.
-    - Privacy Violations: 
-      - AI systems can collect and use personal data in ways that violate user privacy. 
-      - Mitigation strategies include implementing strong data protection measures, obtaining informed consent from users, and adhering to privacy regulations.
-    - Misinformation and Manipulation: 
-      - AI-generated content can be used to spread misinformation or manipulate public opinion. 
-      - Mitigation strategies include developing tools to detect and flag AI-generated content, promoting media literacy, and encouraging responsible use of AI technologies.
-    - Job Displacement: 
-      - AI automation can lead to job displacement in certain industries. 
-      - Mitigation strategies include investing in workforce retraining programs, promoting the development of new job opportunities in the AI sector, and fostering a culture of lifelong learning.
-    - Security Risks: 
-      - AI systems can be vulnerable to attacks that exploit their weaknesses. 
-      - Mitigation strategies include implementing robust security measures, regularly testing AI systems for vulnerabilities, and developing incident response plans.
 
 ## Validate and operate AI tools
 - Explain the need to validate AI output
