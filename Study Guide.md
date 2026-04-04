@@ -26,6 +26,54 @@
         - AI systems should be designed to be inclusive and accessible to all users, regardless of their abilities or backgrounds, ensuring that everyone can benefit from AI technologies.
 - **Identify potential harms and mitigation strategies of AI usage**
   - Potential harms of AI usage include:
+    - Hallucinations (Incorrect or fabricated output)
+      - Risk: AI produces wrong code, facts or invented APIs
+      - Mitigation:
+        - Always review,test and validate responses.
+        - Use unit tests, linters and security scanners
+        - Provide clear, specific prompts to reduce ambiguity.
+    - Security Risks
+      - Risks: AI suggest insecure pattterns (hardcode secret, unsafe SQL)
+      - Mitigation:
+        - Enable security filters in GitHub Copilot
+        - Run code scanner tools like CodeSQL, secret scanning and dependecy scanning.
+        - Follow least priviege, secure coding standards.
+    - Bias & Firness Issues
+      - Risk: AI outputs biased lanauge, unfair logic and harmful sterotypes
+      - Mitigation:
+        - Review outputs for bias and exclusion
+        - Use inclusive prompts
+        - Apply human judgement
+    - Privacy and Data Exposure
+      - Risk: Accidentally sharing senstive data in prompt or generated code
+      - Mitigation:
+        - Dont pastest screts, PII or senstive data into prompts
+        - Use Copilot for Business/Enterprise (no training on your data)
+        - Apply data minimization in prompts
+    - Copyright & Licensing Risks
+      -  Risk AI may generate copyrighted code\material
+      -  Mitigation:
+        -  Enable duplication detection
+        -  Review suggestions for unusual or long code blocks.
+        -  perform smaller and modular suggestions
+    -  Over-reliance on AI
+      -  Risk: Developers accept suggestions without understanding them
+      -  Mitigate
+        - Treat AI as a pair programmer
+        - Maintain human oversight
+        - Use AI to accelerate reasoning
+    - Misuse or Misalignment
+      - Risk: Using AI for tasks it wasn't designed for.
+      - Mitigation:
+        - Stay within the intented cases
+        - Apply responsible-use guidelines
+        - Talk with experts when needed.
+    - Prompt Injection/ Manipulation
+      - Risk: Malicious input tries to override instructions or cause harmful output
+      - Mitigation:
+        - Sanitize user input
+        - Avoid feeding unstructed text directly into prompts
+        - Use guardrais and validation layers.
     - Bias and Discrimination: 
       - AI systems can perpetuate or amplify existing biases in data, leading to unfair treatment of certain groups. 
       - Mitigation strategies include using diverse and representative training data, regularly auditing AI systems for bias, and implementing fairness-aware algorithms.
